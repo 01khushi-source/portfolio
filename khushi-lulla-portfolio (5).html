@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Khushi Lulla · Content Strategist &amp; Ghostwriter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#2a80ff;
+    --blue-deep:#1657c9;
+    --beige:#f3ecdc;
+    --beige-2:#faf6ea;
+    --paper:#fffdf6;
+    --ink:#171410;
+    --ink-soft:#4a463e;
+    --line:#171410;
+    --white:#ffffff;
+    --lblue:#e6efff;
+    --pink:#ffd7c2;
+    --shadow: 5px 5px 0 var(--ink);
+    --shadow-sm: 3px 3px 0 var(--ink);
+    --radius: 22px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--beige-2);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  h1,h2,h3,h4{
+    font-family:'Bricolage Grotesque',sans-serif;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  p{margin:0;line-height:1.65;}
+  .mono{font-family:'Space Mono',monospace;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px;}
+  ::selection{background:var(--blue);color:#fff;}
+
+  /* ---------- doodles ---------- */
+  .doodle{position:absolute;pointer-events:none;opacity:.9;}
+  .checker-strip{
+    height:14px;width:100%;
+    background-image:repeating-conic-gradient(var(--ink) 0% 25%, transparent 0% 50%);
+    background-size:14px 14px;
+    opacity:0.9;
+  }
+  .checker-strip.blue{
+    background-image:repeating-conic-gradient(var(--blue) 0% 25%, transparent 0% 50%);
+  }
+  .dotfield{
+    position:absolute;inset:0;
+    background-image:radial-gradient(var(--ink) 1.6px, transparent 1.6px);
+    background-size:16px 16px;
+    opacity:.08;
+    pointer-events:none;
+  }
+
+  /* ---------- nav ---------- */
+  header.site-nav{
+    position:sticky;top:0;z-index:50;
+    background:var(--beige-2);
+    border-bottom:3px solid var(--ink);
+  }
+  .nav-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 28px;max-width:1080px;margin:0 auto;
+  }
+  .logo{
+    font-family:'Bricolage Grotesque',sans-serif;
+    font-weight:800;font-size:22px;
+    display:flex;align-items:center;gap:8px;
+  }
+  .logo .dot{
+    width:10px;height:10px;border-radius:50%;background:var(--blue);
+    display:inline-block;
+  }
+  .nav-links{display:flex;gap:10px;align-items:center;}
+  .nav-links a.navlink{display:none;}
+  @media(min-width:720px){
+    .nav-links a.navlink{
+      display:inline-block;font-family:'Space Mono',monospace;font-size:12.5px;
+      padding:9px 14px;border:2px solid var(--ink);border-radius:100px;
+      background:var(--white);
+    }
+    .nav-links a.navlink:hover{background:var(--lblue);}
+  }
+  .btn{
+    font-family:'Space Mono',monospace;
+    font-size:13px;
+    padding:11px 18px;
+    border:2.5px solid var(--ink);
+    border-radius:100px;
+    background:var(--blue);
+    color:#fff;
+    box-shadow:var(--shadow-sm);
+    display:inline-flex;align-items:center;gap:7px;
+    cursor:pointer;
+    transition:transform .12s ease;
+    white-space:nowrap;
+  }
+  .btn:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink);}
+  .btn.ghost{background:var(--white);color:var(--ink);}
+  .btn.dark{background:var(--ink);color:#fff;}
+  .btn-row{display:flex;gap:12px;flex-wrap:wrap;}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;overflow:hidden;padding:76px 0 60px;}
+  .hero .wrap{position:relative;z-index:2;}
+  .eyebrow{
+    font-family:'Space Mono',monospace;font-size:13px;
+    text-transform:uppercase;letter-spacing:.14em;
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--white);border:2px solid var(--ink);
+    padding:6px 14px;border-radius:100px;margin-bottom:22px;
+  }
+  .eyebrow .dot{width:7px;height:7px;background:var(--blue);border-radius:50%;}
+  .hero h1{
+    font-size:clamp(34px,5.4vw,64px);
+    font-weight:800;
+    line-height:1.05;
+    max-width:920px;
+  }
+  .hero h1 .accent{color:var(--blue);}
+  .hero-sub{
+    margin-top:24px;max-width:600px;
+    font-size:18px;color:var(--ink-soft);
+  }
+  .hero-sub b{color:var(--ink);}
+  .badge-strip{
+    margin-top:26px;display:flex;flex-wrap:wrap;gap:10px;
+  }
+  .badge{
+    font-family:'Space Mono',monospace;font-size:12.5px;
+    background:var(--ink);color:#fff;
+    padding:8px 14px;border-radius:8px;
+    transform:rotate(-1.5deg);
+  }
+  .badge:nth-child(2){background:var(--blue);transform:rotate(1deg);}
+  .badge:nth-child(3){background:var(--ink);transform:rotate(-1deg);}
+  .hero .btn-row{margin-top:34px;}
+
+  .hero-doodle-star{position:absolute;right:6%;top:14%;width:70px;opacity:.95;}
+  .hero-doodle-swirl{position:absolute;right:18%;top:64%;width:56px;opacity:.85;}
+  .hero-doodle-circle{position:absolute;left:78%;top:4%;width:120px;height:120px;border:3px dashed var(--blue);border-radius:50%;opacity:.5;}
+  @media(max-width:860px){.hero-doodle-circle,.hero-doodle-star,.hero-doodle-swirl{display:none;}}
+
+  section{position:relative;padding:64px 0;}
+  .sec-head{max-width:640px;margin-bottom:40px;}
+  .sec-head .eyebrow{margin-bottom:16px;}
+  .sec-head h2{font-size:clamp(26px,3.6vw,40px);font-weight:800;}
+  .sec-head p.lead{margin-top:14px;font-size:16.5px;color:var(--ink-soft);}
+
+  /* ---------- muscles / 5 things ---------- */
+  .muscles-grid{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:18px;
+  }
+  @media(max-width:720px){.muscles-grid{grid-template-columns:1fr;}}
+  .muscle-card{
+    background:var(--white);
+    border:2.5px solid var(--ink);
+    border-radius:18px;
+    padding:22px 22px 20px;
+    box-shadow:var(--shadow-sm);
+  }
+  .muscle-card .num{
+    font-family:'Space Mono',monospace;font-weight:700;font-size:13px;
+    color:var(--blue);
+    display:block;margin-bottom:10px;
+  }
+  .muscle-card h3{font-size:19px;font-weight:700;margin-bottom:8px;}
+  .muscle-card p{color:var(--ink-soft);font-size:15px;}
+  .muscle-card.wide{grid-column:1 / -1;background:var(--lblue);}
+
+  /* ---------- little wins ---------- */
+  .wins-band{
+    background:var(--ink);color:var(--beige-2);
+    padding:52px 0;
+  }
+  .wins-band .sec-head p.lead{color:#cfcabd;}
+  .wins-band .eyebrow{background:transparent;border-color:#4a463e;color:#e9e4d6;}
+  .wins-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  @media(max-width:760px){.wins-grid{grid-template-columns:1fr;}}
+  .win-card{
+    border:2.5px solid #4a463e;border-radius:18px;padding:26px 22px;
+    background:#201c15;
+  }
+  .win-card .val{
+    font-family:'Bricolage Grotesque',sans-serif;font-weight:800;
+    font-size:clamp(30px,4vw,42px);color:var(--blue);
+    display:block;
+  }
+  .win-card .val{ color:#5fa0ff; }
+  .win-card .lab{font-family:'Space Mono',monospace;font-size:12.5px;color:#cfcabd;margin-top:6px;display:block;}
+
+  /* ---------- case study preview cards ---------- */
+  .cs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  @media(max-width:900px){.cs-grid{grid-template-columns:1fr;}}
+  .cs-card{
+    background:var(--white);
+    border:2.5px solid var(--ink);
+    border-radius:var(--radius);
+    padding:0;overflow:hidden;
+    box-shadow:var(--shadow);
+    cursor:pointer;
+    transition:transform .15s ease, box-shadow .15s ease;
+    display:flex;flex-direction:column;
+  }
+  .cs-card:hover{transform:translate(-3px,-3px);box-shadow:8px 8px 0 var(--ink);}
+  .cs-card .cs-top{
+    padding:22px 22px 18px;
+    border-bottom:2.5px solid var(--ink);
+  }
+  .cs-card:nth-child(1) .cs-top{background:var(--lblue);}
+  .cs-card:nth-child(2) .cs-top{background:var(--pink);}
+  .cs-card:nth-child(3) .cs-top{background:var(--beige);}
+  .cs-card .cs-num{font-family:'Space Mono',monospace;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;}
+  .cs-card h3{font-size:21px;font-weight:700;margin-top:10px;line-height:1.25;}
+  .cs-card .cs-body{padding:20px 22px 24px;flex:1;display:flex;flex-direction:column;gap:16px;}
+  .cs-card .cs-desc{font-size:14.5px;color:var(--ink-soft);}
+  .cs-card .cs-cta{
+    margin-top:auto;font-family:'Space Mono',monospace;font-size:12.5px;font-weight:700;
+    display:flex;align-items:center;gap:6px;color:var(--ink);
+  }
+  .cs-card .cs-cta .arrow{transition:transform .15s ease;}
+  .cs-card:hover .cs-cta .arrow{transform:translateX(4px);}
+
+  /* ---------- 4 things ---------- */
+  .facts-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+  @media(max-width:720px){.facts-grid{grid-template-columns:1fr;}}
+  .fact-note{
+    background:var(--beige);
+    border:2.5px solid var(--ink);
+    border-radius:16px;
+    padding:20px 20px 18px;
+    position:relative;
+  }
+  .fact-note:nth-child(odd){transform:rotate(-.6deg);}
+  .fact-note:nth-child(even){transform:rotate(.6deg);}
+  .fact-note .num{
+    font-family:'Space Mono',monospace;font-weight:700;font-size:12px;color:var(--blue);
+    display:block;margin-bottom:8px;
+  }
+  .fact-note p{font-size:14.5px;color:var(--ink-soft);}
+  .fact-note p b{color:var(--ink);}
+
+  .brands-row{
+    margin-top:34px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;
+  }
+  .brand-chip{
+    font-family:'Space Mono',monospace;font-weight:700;font-size:13px;
+    background:var(--white);border:2px solid var(--ink);border-radius:100px;
+    padding:8px 16px;
+  }
+
+  /* ---------- final CTA ---------- */
+  .final-cta{
+    background:var(--blue);color:#fff;
+    border-radius:28px;
+    margin:0 auto 70px;max-width:1080px;
+    padding:56px 40px;
+    position:relative;overflow:hidden;
+    border:3px solid var(--ink);
+    box-shadow:var(--shadow);
+  }
+  .final-cta h2{font-size:clamp(26px,4vw,38px);max-width:680px;}
+  .final-cta p.lead2{margin-top:16px;font-size:16.5px;max-width:560px;color:#eaf1ff;}
+  .final-cta .btn-row{margin-top:30px;}
+  .final-cta .btn{background:#fff;color:var(--ink);}
+  .final-cta .btn.dark{background:var(--ink);color:#fff;}
+
+  footer{padding:32px 0 50px;text-align:center;}
+  footer p{font-family:'Space Mono',monospace;font-size:12.5px;color:var(--ink-soft);}
+
+  /* ================= CASE STUDY VIEW ================= */
+  .cs-view{display:none;}
+  .cs-view.active{display:block;}
+  #view-home.active{display:block;}
+  #view-home{display:none;}
+
+  .back-btn{
+    font-family:'Space Mono',monospace;font-size:13px;font-weight:700;
+    display:inline-flex;align-items:center;gap:8px;
+    padding:9px 16px;border:2px solid var(--ink);border-radius:100px;
+    background:var(--white);cursor:pointer;
+  }
+  .back-btn:hover{background:var(--lblue);}
+
+  .cs-hero{padding:44px 0 40px;position:relative;}
+  .cs-hero .eyebrow{margin-bottom:18px;}
+  .cs-hero h1{font-size:clamp(28px,4.6vw,48px);font-weight:800;max-width:820px;line-height:1.1;}
+  .cs-meta-row{
+    margin-top:22px;display:flex;flex-wrap:wrap;gap:12px;
+  }
+  .meta-chip{
+    font-family:'Space Mono',monospace;font-size:12.5px;
+    background:var(--white);border:2px solid var(--ink);border-radius:10px;
+    padding:8px 14px;
+  }
+  .meta-chip b{color:var(--blue);}
+
+  .intro-block{
+    margin-top:30px;max-width:760px;
+    display:flex;flex-direction:column;gap:14px;
+  }
+  .intro-block p{font-size:17px;color:var(--ink-soft);}
+  .intro-block p:first-child{color:var(--ink);font-weight:600;font-size:18px;}
+
+  .follower-flip{
+    margin-top:40px;
+    display:flex;align-items:center;gap:22px;flex-wrap:wrap;
+    background:var(--ink);color:#fff;border-radius:22px;padding:28px 30px;
+  }
+  .follower-flip .fnum{
+    font-family:'Bricolage Grotesque',sans-serif;font-weight:800;
+    font-size:clamp(30px,5vw,48px);
+  }
+  .follower-flip .flab{font-family:'Space Mono',monospace;font-size:11.5px;color:#cfcabd;margin-top:4px;}
+  .follower-flip .farrow{font-size:30px;color:var(--blue);}
+  .follower-flip .fgrowth{
+    margin-left:auto;font-family:'Space Mono',monospace;font-size:13px;
+    background:var(--blue);padding:9px 16px;border-radius:100px;
+  }
+  @media(max-width:640px){.follower-flip .fgrowth{margin-left:0;}}
+
+  .stat-grid{
+    margin-top:22px;
+    display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
+  }
+  @media(max-width:760px){.stat-grid{grid-template-columns:repeat(2,1fr);}}
+  .stat-box{
+    background:var(--white);border:2.5px solid var(--ink);border-radius:16px;
+    padding:18px 18px 16px;box-shadow:var(--shadow-sm);
+  }
+  .stat-box .v{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:26px;color:var(--blue);}
+  .stat-box .l{font-family:'Space Mono',monospace;font-size:11px;color:var(--ink-soft);margin-top:4px;display:block;}
+  .outside-net{
+    margin-top:18px;display:inline-flex;align-items:center;gap:12px;
+    background:var(--lblue);border:2.5px dashed var(--blue);border-radius:16px;
+    padding:16px 20px;
+  }
+  .outside-net .v{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:30px;color:var(--blue);}
+  .outside-net .t{font-size:14px;color:var(--ink-soft);max-width:260px;}
+
+  .approach-list{margin-top:20px;display:flex;flex-direction:column;gap:14px;}
+  .approach-item{
+    background:var(--beige);border:2px solid var(--ink);border-radius:16px;
+    padding:18px 20px;display:flex;gap:16px;
+  }
+  .approach-item .ai-num{
+    font-family:'Space Mono',monospace;font-weight:700;color:var(--blue);font-size:15px;flex-shrink:0;
+  }
+  .approach-item h4{font-size:16.5px;font-weight:700;margin-bottom:6px;}
+  .approach-item p{font-size:14.5px;color:var(--ink-soft);}
+
+  .result-block{
+    margin-top:14px;background:var(--blue);color:#fff;border-radius:20px;
+    padding:26px 26px;display:flex;flex-direction:column;gap:12px;
+    border:2.5px solid var(--ink);
+  }
+  .result-block p{font-size:15.5px;color:#eaf1ff;}
+  .result-block p b{color:#fff;}
+
+  /* post card = the actual linkedin writing sample */
+  .posts-wrap{margin-top:24px;display:flex;flex-direction:column;gap:26px;}
+  .post-card{
+    background:var(--white);border:2.5px solid var(--ink);border-radius:20px;
+    box-shadow:var(--shadow);overflow:hidden;
+  }
+  .post-card .post-tag{
+    font-family:'Space Mono',monospace;font-size:11.5px;font-weight:700;
+    background:var(--ink);color:#fff;display:inline-block;
+    padding:9px 18px;letter-spacing:.06em;
+  }
+  .post-card .post-body{padding:26px 26px 8px;display:flex;flex-direction:column;gap:13px;}
+  .post-card .post-body p{font-size:15.5px;color:var(--ink);}
+  .post-card .post-body p.hook{font-weight:700;font-size:17.5px;}
+  .post-stats{
+    margin:22px 26px 26px;
+    display:grid;grid-template-columns:repeat(4,1fr);gap:10px;
+  }
+  @media(max-width:560px){.post-stats{grid-template-columns:repeat(2,1fr);}}
+  .post-stats .pstat{
+    font-family:'Space Mono',monospace;
+    background:var(--white);
+    border:2px solid var(--ink);
+    border-radius:12px;
+    padding:14px 10px 12px;
+    text-align:center;
+  }
+  .post-stats .pstat .v{font-weight:700;font-size:19px;color:var(--blue-deep);display:block;line-height:1.2;}
+  .post-stats .pstat .l{font-size:10px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.05em;display:block;margin-top:5px;font-weight:700;}
+
+  .cs-end-cta{
+    margin-top:50px;
+  }
+
+  /* small helper */
+  .rot{display:inline-block;}
+  @media(max-width:600px){
+    .wrap{padding:0 18px;}
+    .final-cta{margin:0 16px 60px;padding:38px 24px;border-radius:22px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="#home" class="logo" onclick="showView('home')"><span class="dot"></span>Khushi Lulla</a>
+    <div class="nav-links">
+      <a class="navlink" href="https://wa.me/918320967530" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="navlink" href="https://www.linkedin.com/in/khushilulla/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn dark" href="https://topmate.io/khushi_lulla/" target="_blank" rel="noopener">Book a call →</a>
+    </div>
+  </div>
+  <div class="checker-strip"></div>
+</header>
+
+<main id="app"></main>
+
+<script>
+/* ============================================================
+   DATA
+   ============================================================ */
+const CASE_STUDIES = [
+{
+  id:"ca",
+  number:"01",
+  industry:"Finance & Education",
+  duration:"12 months",
+  role:"LinkedIn Content & Personal Branding",
+  client:"Finance & Education Industry",
+  title:"Making finance, business & the CA journey make sense on LinkedIn",
+  intro:[
+    "I worked with a CA educator who wanted to build a stronger presence on LinkedIn around finance, business and the CA journey.",
+    "The goal wasn't to make him sound like another finance creator.",
+    "It was to make complicated topics feel simple, relevant and worth talking about."
+  ],
+  startFollowers:"7,193",
+  endFollowers:"15,766",
+  growth:"+8,573 new followers · roughly 2.2X the original audience",
+  stats:[
+    {v:"2.39M+",l:"Impressions"},
+    {v:"627K+",l:"Members reached"},
+    {v:"28K+",l:"Social engagements"},
+    {v:"23.9K",l:"Reactions"},
+    {v:"3,230",l:"Comments"},
+    {v:"736",l:"Saves"}
+  ],
+  outsidePct:"84%",
+  outsideNote:"of impressions came from outside his existing network. This wasn't circulating among people who already followed him.",
+  contentLooksLike:[
+    "The content covered everything from CA careers and salaries to business stories, education and everyday financial decisions.",
+    "The idea was simple: take something people already care about → find the interesting angle → explain it in a way that makes people stop scrolling."
+  ],
+  approach:[
+    {t:"Content positioning", d:"We moved beyond just “CA education” and opened up conversations around money, business, careers and the real-world side of becoming a CA."},
+    {t:"Topic selection", d:"Instead of asking “what should we post today?”, the better question became “what is happening right now that our audience would actually have something to say about?”"},
+    {t:"Writing", d:"Complex topics were turned into simple stories, observations and conversations. No unnecessary jargon, no textbook-style explanations. Just ideas people could understand quickly and actually have an opinion on."},
+    {t:"Testing different angles", d:"Career data. Business stories. CA results. Salary conversations. Industry trends. Student questions. The numbers helped us understand which angles had legs and which ones didn't."}
+  ],
+  result:[
+    "In one year, the account went from 7.1K → 15.7K followers while generating 2.39M+ impressions and reaching 627K+ people.",
+    "But the number I'm probably happiest about? <b>84% of those impressions came from outside his existing network.</b>",
+    "Because growing an audience is one thing. Getting strangers to stop, read and care about what you're writing is the real game."
+  ],
+  posts:[
+    {
+      hook:"India should have 30 lakh Chartered Accountants by 2047.",
+      body:[
+        "This vision was shared by a Past President of the Institute of Chartered Accountants of India (ICAI).",
+        "And honestly, when you hear that number, the first reaction is surprise.",
+        "Because the math behind it is fascinating.",
+        "From 1949 to 2025, India has produced roughly 4 lakh Chartered Accountants.",
+        "To reach 30 lakh professionals by 2047, the implied requirement is nearly 1,23,000 new CAs every year.",
+        "Today, around 35,000 students qualify annually.",
+        "So clearly, this isn't just an academic target; it reflects something bigger.",
+        "India is aiming to become a $30 trillion economy, and such an economy will need stronger governance, compliance, taxation, and financial leadership expertise, as well as advisory services.",
+        "In short, India will need more Chartered Accountants.",
+        "But here's the important part.",
+        "Increasing the number of CAs alone is not enough.",
+        "Even today, jobs exist, but many young professionals feel salaries do not always match expectations.",
+        "If the profession grows rapidly without equal growth in businesses, entrepreneurship, capital markets, and global advisory opportunities, it could create pressure on incomes.",
+        "Which means the real challenge is not producing more CAs.",
+        "The real challenge is growing the entire economic ecosystem alongside the profession.",
+        "- More companies with scale.\n- More global expansion.\n- More value creation.",
+        "Because the strength of the CA profession has never been about numbers.",
+        "It has always been about trust and relevance to the economy.",
+        "P.S. Do you think India's economy will expand fast enough to create meaningful opportunities for 30 lakh CAs?"
+      ],
+      stats:{reactions:"887",comments:"95",reposts:"26",impressions:"224,747"}
+    },
+    {
+      hook:"A CA's salary grew from ₹1.9 lakh to ₹57.8 lakh.",
+      body:[
+        "But unfortunately, some students will learn the wrong lesson from that story.",
+        "An article highlighted the journey of a CA whose compensation grew from an articleship stipend of ₹1.92 lakh in 2013 to ₹57.8 lakh as a Manager in Sweden by 2022.",
+        "Most people looked at the ending. ₹57.8 lakh.",
+        "And the students reading this story are likely to ask: \"Which company was this?\" \"How can I earn the same?\"",
+        "I think those are the wrong questions. Because nowhere in this journey did the biggest jump come from comparing salaries.",
+        "It came from accumulating skills.",
+        "From getting promoted. From taking on more responsibility. From becoming valuable enough to earn international opportunities.",
+        "Yet every placement season, I see students obsessing over a ₹8 or ₹10 lakh package.",
+        "As if that number will decide the next decade of their career.",
+        "It won't.",
+        "The real lesson from this story is not that a CA can earn ₹57.8 lakh.",
+        "The real lesson is that careers compound. And the students who understand compounding early usually stop obsessing over Day 1 salaries.",
+        "PS: If you were choosing between a higher package and a steeper learning curve, which would you prioritise?"
+      ],
+      stats:{reactions:"399",comments:"38",reposts:"2",impressions:"135,598"}
+    },
+    {
+      hook:"“Sir, how much should I earn in the future?”",
+      body:[
+        "CA students often ask me this one question.",
+        "Recently, I came across a very interesting infographic on state-wise top 1% income in India.",
+        "What surprised me was not the numbers. It was the difference in perspective.",
+        "In some states, entering the top 1% may require around ₹40–45 lakh annually. In others, the number is much lower.",
+        "Even the national average threshold is around ₹22 lakh.",
+        "This shows something important.",
+        "Financial success is always relative to context. But professional competence is not.",
+        "Your CA degree does not just aim to place you in a statistical bracket.",
+        "It gives you the capability to create value, make decisions, and build long-term financial stability.",
+        "Chasing numbers alone can create pressure. Building expertise creates options.",
+        "Income is an outcome. Capability is the real asset.",
+        "P.S. Do you think financial success should be measured by income brackets or by the value you are able to create?"
+      ],
+      stats:{reactions:"289",comments:"36",reposts:"2",impressions:"116,462"}
+    },
+    {
+      hook:"January 2026 CA Final results were a shocker.",
+      body:[
+        "Across the board: Group I percentage reduced, Group II dropped significantly, both groups' passing rate also declined.",
+        "Whenever results compress like this, it usually signals one thing: the profession is TIGHTENING its filter.",
+        "But this time, numbers alone don't explain the story.",
+        "1. The checking was unforgiving. If your concepts were 80% clear, the remaining 20% showed up sharply in marks. Today, concepts need to be deeper, sharper, and fully exam-ready. Surface preparation is simply not enough anymore.",
+        "2. The IBS paper concern (Group II). Open book has become more of a burden than a benefit. Students carrying multiple suitcases into the exam hall reflect confusion, not clarity. Clearer guidance from ICAI on scope and evaluation is needed to restore its true intent.",
+        "3. Preparation quality gap. At the CA Final level, marks are earned in thinking, structuring answers, and applying concepts, not in how much material you have completed.",
+        "4. Protecting the CA brand. When qualification numbers rise sharply in a single attempt, the next often restores balance and maintains professional standards.",
+        "If you are preparing for upcoming attempts, understand this clearly: the paper is not your enemy. Average preparation is.",
+        "You will have to: write more than you read, revise more than you used to, solve more than you consume lectures.",
+        "This result is not meant to scare you. It is meant to raise your standard.",
+        "Congratulations to those who became CA and those who didn't; aim for the next one with even better preparation. I am rooting for you.",
+        "P.S. Are we seeing tougher exams, or are we just entering an era where only precision gets rewarded?"
+      ],
+      stats:{reactions:"431",comments:"15",reposts:"7",impressions:"163,741"}
+    }
+  ]
+},
+{
+  id:"wellness",
+  number:"02",
+  industry:"Healthcare & Wellness",
+  duration:"3 months",
+  role:"LinkedIn Content & Personal Branding",
+  client:"Healthcare & Wellness Industry",
+  title:"Making wellness, mental health & everyday behaviour worth talking about on LinkedIn",
+  intro:[
+    "I worked with an integrative medicine doctor, functional medicine practitioner and certified wellness & mental health coach who wanted to build a stronger presence on LinkedIn.",
+    "The challenge was interesting. Healthcare content can very easily become either too clinical or too generic.",
+    "The goal was to make ideas around mental health, behaviour, wellness and the brain feel simple, relatable and worth stopping for."
+  ],
+  startFollowers:"2,679",
+  endFollowers:"3,630",
+  growth:"+951 new followers in just three months",
+  stats:[
+    {v:"378K+",l:"Impressions"},
+    {v:"214K+",l:"Members reached"},
+    {v:"7,974",l:"Social engagements"},
+    {v:"6,526",l:"Reactions"},
+    {v:"415",l:"Comments"},
+    {v:"720 / 149",l:"Saves / Reposts"}
+  ],
+  outsidePct:"97%",
+  outsideNote:"of impressions came from outside the existing network. The content was getting discovered by a much wider audience.",
+  contentLooksLike:[
+    "The content explored mental health, human behaviour, the brain, workplace behaviour and everyday experiences.",
+    "The idea was simple: take something people experience but don't always know how to explain → put words around it → make them see it differently."
+  ],
+  approach:[
+    {t:"Making complex topics easier to consume", d:"Instead of writing like a medical textbook, we focused on ideas people could immediately recognise from their own lives."},
+    {t:"Finding the human angle", d:"Mental health isn't just a medical topic. It shows up in conversations, workplaces, relationships, habits and tiny everyday behaviours, which gave us a much bigger pool of content ideas."},
+    {t:"Writing for curiosity", d:"A lot of posts started with something familiar and then took the reader somewhere they didn't expect. The aim was simple: “wait, I've never thought about it that way.”"},
+    {t:"Testing what people actually share", d:"Posts around emotions, the brain and relatable human behaviour weren't just getting reactions. They were getting reposted and saved, which helped the content travel well beyond the existing audience."}
+  ],
+  result:[
+    "In just three months, the account went from 2.6K → 3.6K followers while generating 378K+ impressions and reaching 214K+ people.",
+    "But the number that really stands out is: <b>97% of impressions came from outside the existing network.</b>",
+    "That's a pretty good sign that the content wasn't just talking to an existing audience. It was finding a new one."
+  ],
+  posts:[
+    {
+      hook:"\"I don't have time to deal with my emotions right now.\"",
+      body:[
+        "This is one of the most common things I hear from high-performing individuals.",
+        "So they push through. They stay busy. They focus on work. They take care of everyone else. They tell themselves they'll address it later.",
+        "The difficulty is that emotions rarely disappear because they are ignored.",
+        "Over time, they often reappear in forms people don't immediately recognise. Poor sleep, irritability, difficulty concentrating, a constant sense of being switched on, unexplained fatigue, digestive symptoms, and a shorter fuse with the people closest to them.",
+        "As a doctor, I have seen many people try to solve these experiences by optimizing their schedule, improving productivity, or pushing themselves harder.",
+        "Sometimes the issue is not a lack of discipline.",
+        "Sometimes the issue is that the nervous system has been carrying unprocessed stress, grief, disappointment, frustration, or emotional exhaustion for far too long.",
+        "Feeling your emotions is not a weakness. It is not losing control. It is information.",
+        "The ability to acknowledge what you are feeling, without judging yourself for it, is one of the most overlooked skills in maintaining long-term mental and physical well-being.",
+        "The goal is not to become emotional. The goal is to become emotionally aware. There is a difference.",
+        "And in my experience, the people who learn that difference often become healthier, more resilient, and more effective in every area of their lives."
+      ],
+      stats:{reactions:"1,388",comments:"59",reposts:"402",impressions:"70,738"}
+    },
+    {
+      hook:"Teenagers are experiencing anxiety attacks and panic attacks at an age when they should be enjoying life.",
+      body:[
+        "What concerns me is that many of them have started to see these experiences as a normal part of growing up.",
+        "When you're surrounded by constant expectations, it's easy to understand why.",
+        "There is pressure to perform well academically, get into the right college, build an impressive profile, stay socially connected, and somehow keep everything together at the same time.",
+        "Over time, stress can become so familiar that warning signs are dismissed as \"just being busy\" or \"just being a teenager.\"",
+        "Difficulty sleeping, racing thoughts, feeling overwhelmed before exams, or experiencing intense physical symptoms of anxiety can start to feel like part of everyday life rather than signals that something needs attention.",
+        "One conversation I find myself having more often with both teenagers and parents is about the difference between coping and being okay.",
+        "A teenager may still be getting good grades, showing up to school, and meeting expectations while quietly struggling with significant anxiety.",
+        "Performance can sometimes hide distress rather than reveal it.",
+        "Some of the young people who appear the most capable and composed on the outside are carrying an enormous amount of pressure internally.",
+        "That's why conversations about anxiety and panic matter. Not just because we want to alarm young people; the reason is that recognising the signs early can help them understand what they're experiencing and seek support before stress becomes their default way of functioning.",
+        "The graphic below highlights some of the key differences between anxiety attacks and panic attacks.",
+        "How many of these signs do you think parents, teachers, and even teenagers themselves might be missing?"
+      ],
+      stats:{reactions:"413",comments:"23",reposts:"104",impressions:"55,734"}
+    },
+    {
+      hook:"One of the most fascinating things about the brain is that it doesn't care whether you're paying attention to something helpful or harmful.",
+      body:[
+        "It simply gets better at whatever you repeatedly do.",
+        "If you spend months focusing on deadlines, problems, risks, pressure, and what might go wrong, your brain becomes incredibly efficient at finding more of them.",
+        "Because you've trained it to look there.",
+        "Neuroscience suggests this is exactly how many of our mental patterns are reinforced.",
+        "When we're stressed, the brain naturally becomes more focused on problems, threats, deadlines, and what could go wrong next. It's a survival mechanism.",
+        "The challenge is that the more time we spend in that state, the easier it becomes for the brain to keep returning there.",
+        "This is where gratitude becomes interesting because it's not just an emotion; it's a brain exercise.",
+        "Studies have shown that practising gratitude can increase activity in areas of the brain linked to positive emotions, social connection, empathy, and emotional regulation. It is also associated with lower levels of cortisol, the body's primary stress hormone.",
+        "And I think that's particularly relevant for high-achievers.",
+        "Many people become exceptionally skilled at identifying problems, fixing issues, and anticipating risks.",
+        "But over time, they can get so used to focusing on what's missing or what needs fixing that they stop noticing what's already going well.",
+        "The more we focus on something, the stronger that pattern becomes in the brain."
+      ],
+      stats:{reactions:"740",comments:"12",reposts:"238",impressions:"35,672"}
+    },
+    {
+      hook:"Every morning, your team walks into the office carrying two bags. You only notice one.",
+      body:[
+        "One holds a laptop.",
+        "The other carries sleepless nights, ageing parents, financial pressure, uncertainty, health concerns, relationship challenges, or grief.",
+        "Yet we continue to judge people only by what we can see.",
+        "The meeting they missed. The deadline that slipped. The email they didn't reply to.",
+        "Rarely do we ask what they may have been carrying before they even opened their laptop.",
+        "But that behaviour almost always has a story behind it.",
+        "The employee who has become unusually quiet may not have lost motivation.",
+        "The colleague who suddenly isn't performing may not have lost capability.",
+        "The manager who seems impatient may not have lost empathy.",
+        "Sometimes, they have simply reached the limit of what they can carry alone.",
+        "Great leadership is not about lowering standards. It is about recognising that people bring far more to work than their job description.",
+        "Because when people feel seen, they don't just become healthier. They become more engaged, more resilient, and more capable of doing their best work."
+      ],
+      stats:{reactions:"487",comments:"18",reposts:"93",impressions:"31,712"}
+    }
+  ]
+},
+{
+  id:"personal",
+  number:"03",
+  industry:"Personal Branding & LinkedIn Content",
+  duration:"27 months · Apr 2024 – Jul 2026",
+  role:"Content Strategy, Writing & Personal Branding",
+  client:"Marketing Industry",
+  title:"Building my own LinkedIn account as my biggest case study",
+  intro:[
+    "I started writing on LinkedIn seriously on 1 April 2024.",
+    "And I think that's important because I don't just tell clients how LinkedIn works. I tested it on myself first.",
+    "For the last two years, I've used my own account as a playground for testing hooks, stories, topics, formats and different ways of making people stop scrolling. Some worked. Some absolutely did not. Both taught me something."
+  ],
+  startFollowers:"2,100",
+  endFollowers:"41,931",
+  growth:"almost 20X audience growth",
+  stats:[
+    {v:"7.85M+",l:"Impressions"},
+    {v:"290K+",l:"Reactions"},
+    {v:"66K+",l:"Comments"},
+    {v:"356K+",l:"Total social engagements"},
+    {v:"41,931",l:"Followers today"},
+    {v:"20X",l:"Audience growth"}
+  ],
+  outsidePct:"67%",
+  outsideNote:"of content reached people outside my existing network. Proof that the account keeps finding new readers, not just re-serving the same ones.",
+  contentLooksLike:[
+    "I don't stick to one topic. I write about LinkedIn, writing, personal branding, content, work, clients, career lessons and random things that happen in everyday life.",
+    "Because I wanted to prove something to myself: you don't need to talk about the same thing every day to build a recognisable personal brand. You need to make people recognise how you think."
+  ],
+  approach:[
+    {t:"Writing beats a perfect content plan", d:"I've written plenty of posts without a fancy calendar. The bigger job was learning how to recognise a good story when it happened."},
+    {t:"Your niche doesn't have to be your prison", d:"I talk about content one day and something completely personal the next. The common thread is my voice and the way I look at things."},
+    {t:"Personal stories can have a business purpose", d:"A story about staying at an agency for three years can become a conversation about career decisions. A spilled coffee can become a lesson about work. A client calling my writing “AI-generated” can become a conversation about what good writing actually sounds like. That's the part I love: finding the bigger idea hiding inside a very normal moment."},
+    {t:"I test before I recommend", d:"Every hook, format, topic and writing style I use with clients has a better chance of working because I've spent years testing these things on my own account. Some experiments gave me 80K+ impressions. Some gave me a very humbling 300. Both count."}
+  ],
+  result:[
+    "I went from 2.1K → 41.9K followers while building an account that has generated 7.85M+ impressions.",
+    "But follower growth isn't the part I care about most. <b>The bigger win is that I've built an account where people can see how I write, how I think and what I notice.</b>",
+    "Which is exactly what I want potential clients to see before they ever book a call with me."
+  ],
+  posts:[
+    {
+      hook:"I accidentally stayed at the same agency for 3 years.",
+      body:[
+        "And this week, I was scolded for not eating fruits.",
+        "It's a strange way to celebrate a work anniversary. I know.",
+        "Three years ago, I joined Buzz Up Marketing part-time while I was pursuing my MBA.",
+        "Back then, I didn't know much. I was learning, experimenting, making mistakes, and slowly building my judgment.",
+        "Today, I spend my days planning content, creating systems, solving problems, and making decisions that affect the work of an entire team.",
+        "I never realized when that shift happened.",
+        "Somewhere in between, I also received other job offers. Some offered more money. Some offered bigger titles.",
+        "But I never really wanted to leave.",
+        "I guess it's because of the little things like, this week, Pooja wasn't asking me about deadlines or client work.",
+        "She was asking why I wasn't eating fruits regularly. And I was scolded in the middle of the office.",
+        "It made me smile and think. Not about the fruits (sorry). But how I had spent three years in a place where I was allowed to grow beyond my job title.",
+        "If you're early in your career, don't just look for a role.",
+        "Find a place where your responsibilities grow as fast as your judgment.",
+        "Three years later, I think that's been the biggest career advantage I could've asked for.",
+        "That's all for today. I hope this was worth the scroll. See you again soon. 💙"
+      ],
+      stats:{reactions:"636",comments:"108",reposts:"2",impressions:"80,971"}
+    },
+    {
+      hook:"Some of my viral posts were actually bad ideas.",
+      body:[
+        "And still, people engaged.",
+        "Because bad ideas are better than no ideas.",
+        "Sounds weird, right? But hear me out.",
+        "Bad ideas are underrated. They break the ice, start conversations, spark debates.",
+        "They challenge assumptions and force us to think differently.",
+        "I've used bad ideas in the most unexpected ways to write a post. Tweaked them. Combined them. Turned them into something bold and brilliant.",
+        "No ideas? That's a dead end. Bad ideas? That's a starting point.",
+        "So next time, don't hold back.",
+        "Throw your wildest, weirdest idea on the table. You never know what it could turn into.",
+        "P.S. Do you think about your bad ideas?"
+      ],
+      stats:{reactions:"864",comments:"193",reposts:"4",impressions:"11,834"}
+    },
+    {
+      hook:"One of my clients called my writing \"AI-generated\" yesterday.",
+      body:[
+        "For a second, I wanted to explain myself. Because I knew how much work had gone into those posts.",
+        "The topic. The research. The writing process.",
+        "It would've been easy to reply with: \"But this isn't AI-generated.\"",
+        "Instead, I kept reading because: he wasn't attacking my writing. He was explaining how his audience experienced it.",
+        "He told me they could recognize certain AI patterns. His clients had mentioned it. His friends had mentioned it.",
+        "And honestly, that feedback mattered more than me proving I was right.",
+        "I explained my process. He explained what he wanted. Neither of us was wrong.",
+        "We were just looking at the same content from two completely different perspectives.",
+        "I could've copied all his feedback into ChatGPT and asked it to rewrite everything.",
+        "Instead, I spent 4 hours on a Sunday night going through every comment, every example, and every sentence.",
+        "Because I wasn't trying to make the content sound less like AI.",
+        "I was trying to understand why it felt that way in the first place. That's a much harder problem to solve.",
+        "AI makes rewriting easy. But it doesn't replace understanding your audience.",
+        "That's all for today. I hope this was worth the scroll. See you again soon. 💙"
+      ],
+      stats:{reactions:"946",comments:"111",reposts:"N/A",impressions:"16,999"}
+    },
+    {
+      hook:"The template trap is why so much LinkedIn content sounds the same.",
+      body:[
+        "Templates were never the problem. They were meant to help you get started.",
+        "Today, they've become the starting point, the middle, and the end.",
+        "A creator writes a post. It's original, so it does well. Someone turns it into a template. AI learns the pattern. Thousands of people reuse it.",
+        "Six months later, your feed is full of different stories that somehow feel the same.",
+        "That's what fascinates me. AI didn't create that sameness. We did.",
+        "We collectively decided that if something worked once, it should work forever.",
+        "The problem is that LinkedIn isn't reading one post. It's reading millions of them.",
+        "When thousands of people use the same framework, the same pacing, the same style of storytelling and the same prompts, every new post becomes a little less surprising than the last one.",
+        "Readers can feel the sameness long before they call it \"AI slop.\"",
+        "Ironically, the people using templates are trying to stand out.",
+        "The people who'll keep winning over the next few years won't necessarily have better AI. They'll simply have better observations.",
+        "Because AI can generate words but it can't generate a life you've actually lived.",
+        "All you need to do is live more, observe more, think more to create better content.",
+        "That's all for today. I hope this was worth the scroll. See you again soon. 💙"
+      ],
+      stats:{reactions:"1,028",comments:"78",reposts:"3",impressions:"15,185"}
+    }
+  ]
+}
+];
+
+/* ============================================================
+   RENDER: HOME
+   ============================================================ */
+function renderHome(){
+  const csCards = CASE_STUDIES.map(cs=>`
+    <div class="cs-card" onclick="showView('${cs.id}')">
+      <div class="cs-top">
+        <span class="cs-num mono">Case Study ${cs.number}</span>
+        <h3>${cs.title}</h3>
+      </div>
+      <div class="cs-body">
+        <p class="cs-desc">${cs.client}</p>
+        <div class="cs-cta">Read the case study <span class="arrow">→</span></div>
+      </div>
+    </div>
+  `).join("");
+
+  return `
+  <section class="hero">
+    <div class="dotfield"></div>
+    <svg class="doodle hero-doodle-star" viewBox="0 0 100 100" fill="none"><path d="M50 2 L58 40 L98 50 L58 60 L50 98 L42 60 L2 50 L42 40 Z" fill="#2a80ff"/></svg>
+    <svg class="doodle hero-doodle-swirl" viewBox="0 0 100 100" fill="none"><path d="M10 50 Q10 10 50 10 Q90 10 90 50 Q90 80 60 80 Q40 80 40 60" stroke="#171410" stroke-width="4" stroke-linecap="round"/></svg>
+    <div class="doodle hero-doodle-circle"></div>
+    <div class="wrap">
+      <div class="eyebrow"><span class="dot"></span>Writing &amp; Personal Branding</div>
+      <h1>I make smart people sound like <span class="accent">themselves</span> on the internet.</h1>
+      <p class="hero-sub">Hey, I'm <b>Khushi</b>, a content strategist and ghostwriter for founders and experts who have a lot to say but no time (or patience) to figure everything out themselves.</p>
+      <div class="badge-strip">
+        <span class="badge">Top 2% Globally on Favikon</span>
+        <span class="badge">#13 in India</span>
+        <span class="badge">#108 Worldwide</span>
+      </div>
+      <div class="btn-row">
+        <a class="btn" href="https://topmate.io/khushi_lulla/" target="_blank" rel="noopener">Book a call</a>
+        <a class="btn ghost" href="https://wa.me/918320967530" target="_blank" rel="noopener">Text me on WhatsApp</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/khushilulla/" target="_blank" rel="noopener">See my LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="checker-strip blue"></div>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow"><span class="dot"></span>the practice</div>
+        <h2>I'm always working on getting better at five things.</h2>
+        <p class="lead">These are the muscles I'm actively training over the next few years, and honestly, the clients I take on are the ones who help me train them, not just the ones who need a content calendar.</p>
+      </div>
+      <div class="muscles-grid">
+        <div class="muscle-card"><span class="num mono">01</span><h3>Sharper judgement</h3><p>Knowing which idea deserves the post, and which doesn't.</p></div>
+        <div class="muscle-card"><span class="num mono">02</span><h3>Idea articulation</h3><p>Saying the smart thing simply, not the simple thing smartly.</p></div>
+        <div class="muscle-card"><span class="num mono">03</span><h3>Observation</h3><p>Noticing the story hiding inside a very normal Tuesday.</p></div>
+        <div class="muscle-card"><span class="num mono">04</span><h3>Imagination</h3><p>Finding an angle nobody else in the niche has used yet.</p></div>
+        <div class="muscle-card wide"><span class="num mono">05</span><h3>Consuming better content</h3><p>So what I write stays worth reading.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wins-band">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow"><span class="dot"></span>little wins</div>
+        <h2 style="color:#faf6ea;">The numbers behind the writing.</h2>
+      </div>
+      <div class="wins-grid">
+        <div class="win-card"><span class="val mono">10.6M+</span><span class="lab">Combined impressions</span></div>
+        <div class="win-card"><span class="val mono">392K+</span><span class="lab">Total engagements</span></div>
+        <div class="win-card"><span class="val mono">841K+</span><span class="lab">Unique members reached</span></div>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow"><span class="dot"></span>case studies</div>
+        <h2>3 LinkedIn accounts. 3 completely different voices. 3 real growth stories.</h2>
+        <p class="lead">Click into any card to read the full breakdown: the strategy, the numbers, and the actual posts, exactly as they were written and published.</p>
+      </div>
+      <div class="cs-grid">${csCards}</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow"><span class="dot"></span>off the timeline</div>
+        <h2>4 things that have nothing to do with LinkedIn.</h2>
+        <p class="lead">Well, almost nothing.</p>
+      </div>
+      <div class="facts-grid">
+        <div class="fact-note"><span class="num mono">01</span><p><b>This is my 4th try.</b> I wanted to start my career with arts, banking, then business analytics, but ended up becoming a writer.</p></div>
+        <div class="fact-note"><span class="num mono">02</span><p><b>2025 surprised me.</b> I overachieved my financial goal in 2025, so naturally, I set a bigger one for 2026.</p></div>
+        <div class="fact-note"><span class="num mono">03</span><p><b>7 months into 2026.</b> Not close to my new financial goal yet. Getting closer though, and I know it'll come together.</p></div>
+        <div class="fact-note"><span class="num mono">04</span><p><b>Top Indian brands I've collaborated with.</b> Super grateful to work with Lenskart, Wishcare, Dabur, the little girl in me is proud.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="final-cta">
+    <div class="checker-strip" style="position:absolute;top:0;left:0;right:0;height:10px;opacity:.35;"></div>
+    <h2>Give your audience a reason to stop, read, and trust your perspective,<br>with a presence that is undeniably worth the scroll.</h2>
+    <p class="lead2">If you've read this far, you already know I'm not going to write you another generic AI post. Let's talk about what your account could actually become.</p>
+    <div class="btn-row">
+      <a class="btn dark" href="https://topmate.io/khushi_lulla/" target="_blank" rel="noopener">Book a call</a>
+      <a class="btn" href="https://wa.me/918320967530" target="_blank" rel="noopener">WhatsApp me</a>
+      <a class="btn" href="https://www.linkedin.com/in/khushilulla/" target="_blank" rel="noopener">See my LinkedIn</a>
+    </div>
+  </div>
+
+  <footer><p>KHUSHI LULLA · CONTENT STRATEGY &amp; GHOSTWRITING · MADE FOR PEOPLE WHO HAVE SOMETHING TO SAY</p></footer>
+  `;
+}
+
+/* ============================================================
+   RENDER: CASE STUDY
+   ============================================================ */
+function fmtP(p){
+  // convert simple <b> passthrough + newlines within a stat-list line
+  return p.split("\n").map(l=>`<p>${l}</p>`).join("");
+}
+
+function renderCaseStudy(cs){
+  const statBoxes = cs.stats.map(s=>`<div class="stat-box"><span class="v mono">${s.v}</span><span class="l">${s.l.toUpperCase()}</span></div>`).join("");
+  const approachItems = cs.approach.map((a,i)=>`
+    <div class="approach-item">
+      <span class="ai-num mono">0${i+1}</span>
+      <div><h4>${a.t}</h4><p>${a.d}</p></div>
+    </div>`).join("");
+  const introHTML = cs.intro.map(p=>`<p>${p}</p>`).join("");
+  const contentLooksHTML = cs.contentLooksLike.map(p=>`<p>${p}</p>`).join("");
+  const resultHTML = cs.result.map(p=>`<p>${p}</p>`).join("");
+
+  const postsHTML = cs.posts.map((post,i)=>`
+    <div class="post-card">
+      <span class="post-tag">Content ${i+1} · from the account</span>
+      <div class="post-body">
+        <p class="hook">${post.hook}</p>
+        ${post.body.map(l=>fmtP(l)).join("")}
+      </div>
+      <div class="post-stats">
+        <div class="pstat"><span class="v">${post.stats.reactions}</span><span class="l">Reactions</span></div>
+        <div class="pstat"><span class="v">${post.stats.comments}</span><span class="l">Comments</span></div>
+        <div class="pstat"><span class="v">${post.stats.reposts}</span><span class="l">Reposts</span></div>
+        <div class="pstat"><span class="v">${post.stats.impressions}</span><span class="l">Impressions</span></div>
+      </div>
+    </div>
+  `).join("");
+
+  return `
+  <div class="wrap">
+    <div style="padding-top:22px;"><a class="back-btn" onclick="showView('home')">← Back to home</a></div>
+  </div>
+
+  <section class="cs-hero">
+    <div class="wrap">
+      <div class="eyebrow"><span class="dot"></span>case study ${cs.number}</div>
+      <h1>${cs.title}</h1>
+      <div class="cs-meta-row">
+        <span class="meta-chip">Industry: <b>${cs.industry}</b></span>
+        <span class="meta-chip">Duration: <b>${cs.duration}</b></span>
+        <span class="meta-chip">Role: <b>${cs.role}</b></span>
+      </div>
+      <div class="intro-block">${introHTML}</div>
+
+      <div class="follower-flip">
+        <div><span class="fnum mono">${cs.startFollowers}</span><span class="flab">STARTING FOLLOWERS</span></div>
+        <span class="farrow">→</span>
+        <div><span class="fnum mono">${cs.endFollowers}</span><span class="flab">FOLLOWERS TODAY</span></div>
+        <span class="fgrowth mono">${cs.growth}</span>
+      </div>
+
+      <div class="stat-grid">${statBoxes}</div>
+
+      <div class="outside-net">
+        <span class="v mono">${cs.outsidePct}</span>
+        <span class="t">${cs.outsideNote}</span>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:10px;">
+    <div class="wrap">
+      <div class="sec-head" style="margin-bottom:20px;">
+        <div class="eyebrow"><span class="dot"></span>what the content looked like</div>
+      </div>
+      <div class="intro-block" style="margin-top:0;">${contentLooksHTML}</div>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <div class="sec-head" style="margin-bottom:10px;">
+        <div class="eyebrow"><span class="dot"></span>the approach</div>
+        <h2 style="font-size:26px;">What I brought to the account</h2>
+      </div>
+      <div class="approach-list">${approachItems}</div>
+    </div>
+  </section>
+
+  <section style="padding-top:10px;">
+    <div class="wrap">
+      <div class="sec-head" style="margin-bottom:20px;">
+        <div class="eyebrow"><span class="dot"></span>the writing</div>
+        <h2 style="font-size:26px;">4 posts from the account, exactly as published</h2>
+        <p class="lead">Every hook, every line break, every result. This is the actual writing that drove the numbers above.</p>
+      </div>
+      <div class="posts-wrap">${postsHTML}</div>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <div class="sec-head" style="margin-bottom:14px;">
+        <div class="eyebrow"><span class="dot"></span>the result</div>
+      </div>
+      <div class="result-block">${resultHTML}</div>
+    </div>
+  </section>
+
+  <div class="final-cta cs-end-cta">
+    <h2>Want an account that reads like this?</h2>
+    <p class="lead2">This is what strategy plus real writing looks like when it's done consistently. If you want the same for your own account, let's talk.</p>
+    <div class="btn-row">
+      <a class="btn dark" href="https://topmate.io/khushi_lulla/" target="_blank" rel="noopener">Book a call</a>
+      <a class="btn" href="https://wa.me/918320967530" target="_blank" rel="noopener">WhatsApp me</a>
+      <a class="btn" href="https://www.linkedin.com/in/khushilulla/" target="_blank" rel="noopener">See my LinkedIn</a>
+    </div>
+  </div>
+
+  <footer><p>KHUSHI LULLA · CONTENT STRATEGY &amp; GHOSTWRITING · MADE FOR PEOPLE WHO HAVE SOMETHING TO SAY</p></footer>
+  `;
+}
+
+/* ============================================================
+   APP / ROUTER
+   ============================================================ */
+const app = document.getElementById("app");
+
+function buildApp(){
+  let html = `<div id="view-home" class="cs-view">${renderHome()}</div>`;
+  CASE_STUDIES.forEach(cs=>{
+    html += `<div id="view-${cs.id}" class="cs-view">${renderCaseStudy(cs)}</div>`;
+  });
+  app.innerHTML = html;
+}
+
+function showView(id){
+  document.querySelectorAll(".cs-view").forEach(v=>v.classList.remove("active"));
+  const target = document.getElementById("view-"+id);
+  if(target){ target.classList.add("active"); }
+  window.location.hash = id;
+  window.scrollTo({top:0, behavior:"instant"});
+}
+
+buildApp();
+const initial = window.location.hash ? window.location.hash.replace("#","") : "home";
+showView(document.getElementById("view-"+initial) ? initial : "home");
+</script>
+</body>
+</html>
