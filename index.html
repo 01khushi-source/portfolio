@@ -409,6 +409,103 @@
     .wrap{padding:0 18px;}
     .final-cta{margin:0 16px 60px;padding:38px 24px;border-radius:22px;}
   }
+
+  /* ================= BLOGS TAB (added) ================= */
+  .nav-links a.navlink.blogs-link{display:inline-block;font-family:'Space Mono',monospace;font-size:12.5px;padding:9px 14px;border:2px solid var(--ink);border-radius:100px;background:var(--white);}
+  .nav-links a.navlink.blogs-link:hover,.nav-links a.navlink.blogs-link.on{background:var(--lblue);}
+  .nav-links a.navlink.blogs-link.on{box-shadow:var(--shadow-sm);}
+  @media(max-width:719px){.nav-inner{padding:14px 18px;}.nav-links{gap:8px;}.nav-links a.btn{padding:9px 12px;font-size:12px;}.nav-links a.navlink.blogs-link{padding:8px 12px;font-size:12px;}}
+
+  .blog-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+  @media(max-width:820px){.blog-grid{grid-template-columns:1fr;}}
+  .blog-card{
+    background:var(--white);border:2.5px solid var(--ink);border-radius:var(--radius);
+    overflow:hidden;box-shadow:var(--shadow);cursor:pointer;
+    transition:transform .15s ease, box-shadow .15s ease;
+    display:flex;flex-direction:column;
+  }
+  .blog-card:hover{transform:translate(-3px,-3px);box-shadow:8px 8px 0 var(--ink);}
+  .blog-card .bc-top{padding:22px 22px 20px;border-bottom:2.5px solid var(--ink);}
+  .blog-card:nth-child(1) .bc-top{background:var(--lblue);}
+  .blog-card:nth-child(2) .bc-top{background:var(--pink);}
+  .blog-card:nth-child(3) .bc-top{background:var(--beige);}
+  .blog-card:nth-child(4) .bc-top{background:var(--lblue);}
+  .blog-card .bc-num{font-family:'Space Mono',monospace;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;}
+  .blog-card h3{font-size:22px;font-weight:700;margin-top:10px;line-height:1.25;}
+  .blog-card .bc-body{padding:20px 22px 24px;flex:1;display:flex;flex-direction:column;gap:16px;}
+  .blog-card .bc-desc{font-size:14.5px;color:var(--ink-soft);}
+  .blog-card .bc-meta{display:flex;flex-wrap:wrap;gap:8px;}
+  .blog-card .bc-chip{font-family:'Space Mono',monospace;font-size:11px;border:2px solid var(--ink);border-radius:100px;padding:4px 10px;background:var(--beige-2);}
+  .blog-card .bc-cta{margin-top:auto;font-family:'Space Mono',monospace;font-size:12.5px;font-weight:700;display:flex;align-items:center;gap:6px;}
+  .blog-card .bc-cta .arrow{transition:transform .15s ease;}
+  .blog-card:hover .bc-cta .arrow{transform:translateX(4px);}
+
+  .blog-article{
+    max-width:820px;background:var(--white);border:2.5px solid var(--ink);
+    border-radius:var(--radius);box-shadow:var(--shadow);padding:44px 44px 34px;
+  }
+  @media(max-width:600px){.blog-article{padding:26px 20px 20px;}}
+  .blog-article > *:first-child{margin-top:0;}
+  .blog-article p{font-size:16.5px;color:var(--ink-soft);margin-top:16px;line-height:1.75;}
+  .blog-article p b,.blog-article li b{color:var(--ink);}
+  .blog-article h2{font-size:clamp(23px,3vw,30px);font-weight:800;margin-top:46px;line-height:1.2;}
+  .blog-article h2::before{content:"";display:block;width:38px;height:6px;background:var(--blue);border-radius:4px;margin-bottom:14px;}
+  .blog-article h3{font-size:20px;font-weight:700;margin-top:30px;}
+  .blog-article h3 .hn{font-family:'Space Mono',monospace;color:var(--blue);font-size:14px;margin-right:8px;}
+  .blog-article ul.bl{list-style:none;padding:0;margin:16px 0 0;display:flex;flex-direction:column;gap:10px;}
+  .blog-article ul.bl li{position:relative;padding-left:26px;font-size:16px;color:var(--ink-soft);line-height:1.65;}
+  .blog-article ul.bl li::before{content:"";position:absolute;left:3px;top:.5em;width:9px;height:9px;background:var(--blue);border:2px solid var(--ink);border-radius:50%;}
+  .blog-article ol.nl{list-style:none;padding:0;margin:18px 0 0;display:flex;flex-direction:column;gap:12px;counter-reset:nl;}
+  .blog-article ol.nl li{
+    counter-increment:nl;background:var(--beige);border:2px solid var(--ink);border-radius:16px;
+    padding:16px 18px 16px 58px;position:relative;font-size:15.5px;color:var(--ink-soft);line-height:1.65;
+  }
+  .blog-article ol.nl li::before{
+    content:counter(nl,decimal-leading-zero);position:absolute;left:18px;top:16px;
+    font-family:'Space Mono',monospace;font-weight:700;font-size:15px;color:var(--blue);
+  }
+  .blog-article ol.nl li b{display:block;font-family:'Bricolage Grotesque',sans-serif;font-size:17px;margin-bottom:3px;}
+  .blog-article ol.nl.plain li{background:var(--white);padding:11px 16px 11px 52px;border-radius:12px;}
+  .blog-article ol.nl.plain li::before{top:11px;left:16px;}
+  .callout{margin-top:24px;background:var(--lblue);border:2.5px dashed var(--blue);border-radius:18px;padding:20px 22px;}
+  .callout .ct{font-family:'Space Mono',monospace;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--blue-deep);}
+  .callout ul.bl{margin-top:12px;}
+  .callout p{margin-top:10px;font-size:15.5px;}
+  .callout.sand{background:var(--beige);border:2.5px solid var(--ink);}
+  .callout.sand .ct{color:var(--ink);}
+  .pull{margin:30px 0 0;background:var(--ink);color:#fff;border-radius:18px;padding:22px 24px;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(19px,2.4vw,23px);line-height:1.35;}
+  .blog-article p.pull{color:#fff;}
+  .pull .hl{color:#5fa0ff;}
+  .blog-article .keyq{margin-top:22px;background:var(--lblue);border-left:6px solid var(--blue);border-radius:0 14px 14px 0;padding:14px 18px;font-weight:600;color:var(--ink);font-size:16.5px;}
+  .tag-label{display:inline-block;font-family:'Space Mono',monospace;font-size:11.5px;font-weight:700;background:var(--ink);color:#fff;padding:5px 12px;border-radius:8px;margin-top:22px;letter-spacing:.06em;}
+
+  .event-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:22px;}
+  @media(max-width:700px){.event-grid{grid-template-columns:1fr;}}
+  .event{background:var(--beige-2);border:2px solid var(--ink);border-radius:16px;padding:16px 18px 16px;box-shadow:var(--shadow-sm);}
+  .event .en{font-family:'Space Mono',monospace;font-weight:700;font-size:12px;color:var(--blue);}
+  .event h4{font-size:17px;font-weight:700;margin-top:6px;line-height:1.25;}
+  .event .et{display:inline-block;margin-top:8px;font-family:'Space Mono',monospace;font-size:10.5px;background:var(--white);border:1.5px solid var(--ink);border-radius:100px;padding:3px 10px;}
+  .event p{margin-top:10px;font-size:14px;line-height:1.6;}
+
+  .tbl-wrap{margin-top:20px;overflow-x:auto;border:2.5px solid var(--ink);border-radius:16px;}
+  .blog-article table{width:100%;border-collapse:collapse;min-width:560px;font-size:14.5px;}
+  .blog-article th{background:var(--ink);color:#fff;font-family:'Space Mono',monospace;font-size:12px;text-align:left;padding:12px 14px;text-transform:uppercase;letter-spacing:.05em;}
+  .blog-article td{padding:12px 14px;border-top:2px solid var(--ink);color:var(--ink-soft);vertical-align:top;}
+  .blog-article td:first-child{font-weight:700;color:var(--ink);background:var(--lblue);}
+
+  .faq{margin-top:16px;display:flex;flex-direction:column;gap:12px;}
+  .faq-item{background:var(--beige);border:2px solid var(--ink);border-radius:16px;padding:16px 18px;}
+  .faq-item h4{font-size:16.5px;font-weight:700;}
+  .faq-item p{margin-top:6px;font-size:15px;}
+
+  .blog-pager{max-width:820px;display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:30px;}
+  @media(max-width:600px){.blog-pager{grid-template-columns:1fr;}}
+  .pager-card{background:var(--white);border:2.5px solid var(--ink);border-radius:16px;padding:16px 18px;box-shadow:var(--shadow-sm);cursor:pointer;transition:transform .12s ease;}
+  .pager-card:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink);}
+  .pager-card .pl{font-family:'Space Mono',monospace;font-size:11.5px;color:var(--blue);font-weight:700;}
+  .pager-card .pt{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:16px;margin-top:6px;line-height:1.3;}
+  .pager-card.next{text-align:right;grid-column:2;}
+  @media(max-width:600px){.pager-card.next{grid-column:1;text-align:left;}}
 </style>
 </head>
 <body>
@@ -419,6 +516,7 @@
     <div class="nav-links">
       <a class="navlink" href="https://wa.me/918320967530" target="_blank" rel="noopener">WhatsApp</a>
       <a class="navlink" href="https://www.linkedin.com/in/khushilulla/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="navlink blogs-link" href="#blogs" onclick="showView('blogs')">Blogs</a>
       <a class="btn dark" href="https://topmate.io/khushi_lulla/" target="_blank" rel="noopener">Book a call →</a>
     </div>
   </div>
@@ -1053,6 +1151,575 @@ function showView(id){
 buildApp();
 const initial = window.location.hash ? window.location.hash.replace("#","") : "home";
 showView(document.getElementById("view-"+initial) ? initial : "home");
+
+/* ============================================================
+   BLOGS TAB (added) — data
+   ============================================================ */
+const BLOGS = [
+{
+  id:"blog-1", number:"01",
+  topic:"Personal Branding · AI",
+  title:"Building Brands That Outlast AI",
+  desc:"AI made content endless. Trust is what's scarce. Why Relevance, Resonance and Recall build a personal brand that survives the noise.",
+  html:`
+<h2>The Age of Saturation</h2>
+<p>Every era produces more communication than the one before it. What is new today is the speed and scale of that expansion. AI has enabled almost anyone to create words, images, and videos that appear professional and sound convincing. The result is an environment where the volume of information increases faster than human attention can adapt.</p>
+<p>Every feed, screen, and platform is full of content competing for the same few seconds of human focus. Most of it is well-structured and technically sound. Yet, people are not absorbing more; they are filtering more. The paradox of our time is that expression has never been easier, but genuine connection has never been harder.</p>
+<p>When every message sounds polished but predictable, people begin to disengage. What once looked like communication starts to resemble background noise. In this environment, visibility alone means little. What endures is not the number of times someone posts, but whether those words make another person pause, reflect, or feel understood.</p>
+<p class="keyq">That is the core challenge of modern personal branding: to move beyond visibility and toward credibility, to become someone who is felt, not just seen.</p>
+
+<h2>The Cost of Constant Output</h2>
+<p>We live surrounded by signals. Social media, newsletters, short videos, and automated commentary now fill nearly every quiet space in daily life. Yet, despite the abundance of communication, meaning has become scarce. Much of what is shared online is not original thought but repetition, phrases that have been refined, replicated, and recycled until they lose substance.</p>
+<p>This phenomenon is not new. Each major communication technology, from the printing press to radio to television, has produced the same pattern: a burst of excitement at the ability to reach more people, followed by fatigue as quality declines and trust erodes. The faster we communicate, the more likely it is that we dilute meaning in the process.</p>
+<p>Today’s digital environment amplifies that pattern. Automated tools generate content that looks credible, but often lacks the grounding of lived experience. People sense that. The human brain is finely tuned to detect inauthenticity; it recognizes when tone and substance do not align. This is why audiences increasingly ignore even well-crafted messages. They are not short on content; they are short on trust.</p>
+<p>The real consequence of noise is not distraction; it is skepticism. Overexposure to generic communication teaches audiences to doubt what they see. Every exaggerated headline and overpromised claim adds to that erosion. In that environment, authenticity becomes the rarest and most valuable signal.</p>
+<p>Authenticity is not about style or vulnerability as performance. It is about the credibility that comes from experience, coherence, and honesty. It cannot be automated because it requires judgment. <b>Machines can generate sentences, but they cannot mean them.</b></p>
+<p>When people encounter a message that reflects genuine understanding or earned perspective, they feel it differently. It carries weight. It reminds them that there is a human being behind the words, not just an optimized output. In that recognition lies trust, the foundation of all enduring personal brands.</p>
+
+<h2>What Makes a Brand “Noted”?</h2>
+<p>A personal brand becomes meaningful when it consistently aligns with human needs and values. The most enduring ones share three qualities that can be summarized as <b>Relevance, Resonance, and Recall.</b></p>
+
+<h3><span class="hn">01</span>Relevance</h3>
+<p>Relevance begins with awareness, understanding what matters to the people you want to reach. Communication that ignores context is rarely heard. People pay attention when something intersects with their own concerns, hopes, or decisions. This is not about following trends, but about identifying enduring themes that shape human life: belonging, purpose, growth, freedom, and understanding.</p>
+<p>Relevance survives across centuries because it reflects stable elements of human psychology. Shakespeare’s plays still move audiences because they describe jealousy, love, and ambition, conditions that remain constant. Similarly, a modern voice that speaks to universal experiences retains meaning long after its original context fades.</p>
+<p class="keyq">The key question for relevance: Does this idea meet someone at a point of need or curiosity?</p>
+<p>If the answer is no, even the most sophisticated content will fail to connect.</p>
+
+<h3><span class="hn">02</span>Resonance</h3>
+<p>Resonance occurs when people not only understand your message but recognize themselves in it. It is the difference between agreement and identification. A message resonates when it feels personal, when the audience senses that it was written with empathy rather than strategy.</p>
+<p>Resonance requires humility. Instead of asking, “What can I tell them?” the better question is, “What do they already feel that I can help articulate?” When communication begins with listening rather than broadcasting, it becomes collaborative. The audience does not feel instructed; they feel understood.</p>
+<p>This is why the most effective communicators are often those who express shared experiences simply and precisely. They do not seek to impress but to clarify. They respect the intelligence of their audience. In doing so, they earn a kind of emotional credibility that no amount of content volume can replace.</p>
+
+<h3><span class="hn">03</span>Recall</h3>
+<p>Recall is what makes a brand memorable. It emerges from coherence, the consistent alignment of tone, values, and action over time. A person whose words, decisions, and demeanor reflect a stable identity becomes easier to trust because they are predictable in the best sense of the word. Their message carries a recognizable signature.</p>
+<p>Recall is not built through repetition alone, but through consistency of principle. People remember figures like Einstein not just for their intellectual contributions but for the personality that accompanied them: curiosity, humility, and wonder. Their presence carried an identifiable pattern that endured beyond their individual works.</p>
+<p>In branding terms, recall is the accumulated effect of reliability. When someone’s communication repeatedly produces insight, calm, or clarity, those emotions become associated with their name. That emotional memory is what turns a voice into a reference point.</p>
+<p class="pull">Relevance draws people in. Resonance keeps them engaged. <span class="hl">Recall ensures they remember who offered that clarity.</span> Together, they create the foundation of a personal brand that outlasts attention cycles.</p>
+
+<h2>Why Personal Brands Will Matter Even More by 2030?</h2>
+<p>As technology accelerates, personal brands are becoming more important, not less, because people follow people, not logos.</p>
+<p>No matter how advanced machines get, trust will always feel human. The future will overflow with AI-generated content, convincing, polished, endless. That means the scarcest resource will be credibility. <b>Trust will become currency.</b></p>
+<p>And when trust rules, personal brands win because:</p>
+<ol class="nl">
+  <li><b>People come to you, not the other way around.</b>A trusted personal brand acts like gravity. Clients, readers, or employers find you because your reputation precedes you.</li>
+  <li><b>AI engines will start recommending you.</b>As algorithms evolve, they’ll curate content from credible humans. A consistent, trusted voice will get surfaced again and again.</li>
+  <li><b>Your name becomes a search term.</b>People won’t just search for answers; they’ll search for you, your perspective, your way of thinking.</li>
+  <li><b>You attract collaboration and partnership.</b>When you’re known, others want to work with you. A respected personal brand multiplies opportunities.</li>
+  <li><b>You can charge more for the same work.</b>People pay a premium for perceived value. A strong brand signals expertise and reliability.</li>
+  <li><b>You create more career and business options.</b>With a clear identity, you can adapt when the world changes. Those who define themselves by curiosity and credibility can move fluidly between fields, because trust travels with them.</li>
+  <li><b>You’re discoverable across every platform.</b>When your name carries meaning, people find you anywhere, video, audio, text, or stage. Presence travels.</li>
+  <li><b>You get remembered long after trends fade.</b>Trends change; human connection doesn’t. Oprah, Shakespeare, and Curie outlasted their eras because they stood for timeless values.</li>
+  <li><b>You build influence that multiplies.</b>A loyal community amplifies your message. Every post becomes a conversation, not a broadcast.</li>
+  <li><b>You stay relevant, no matter how fast AI grows.</b>Technology can imitate many things, but not integrity, experience, or emotional truth. Those remain distinctly human.</li>
+</ol>
+<p>In short, your personal brand is your future-proof identity. It’s the one thing no machine can copy.</p>
+<p>Think of it like a lighthouse. As the digital ocean gets rougher, your brand becomes the steady beam guiding people through uncertainty. <b>You don’t compete with the storm; you outlast it.</b></p>
+
+<h2>The Human Advantage</h2>
+<p>The defining feature of human communication is meaning. Machines can generate information; they cannot assign significance. They can replicate patterns but not context. This is why being human remains an advantage in the era of AI.</p>
+<p>Your experiences, uncertainties, and emotional perceptions create texture in your communication. They introduce variables that cannot be modelled. Audiences value this because it signals reality. A message that includes uncertainty, reflection, or humility feels more trustworthy than one that appears perfectly confident.</p>
+<p>Research in psychology supports this intuition. The Pratfall Effect shows that competent individuals become more likeable when they reveal a minor flaw or admit a mistake. It humanizes them and signals authenticity. AI cannot do this convincingly because it cannot genuinely err or reflect. Its precision lacks self-awareness and, therefore, lacks trustworthiness.</p>
+<p>This principle applies directly to branding. When individuals communicate with transparency, acknowledging what they don’t know or what they are still learning, they create space for trust to grow. <b>Perfection signals distance; vulnerability signals connection.</b></p>
+<p>Authenticity, however, should not be confused with oversharing. It is not about emotional exposure for its own sake. It is about alignment between what is said and what is lived. A personal brand grounded in congruence, where public statements reflect private values, earns credibility that survives scrutiny.</p>
+<p>Machines can mimic tone, but not integrity. They can produce emotional language, but not emotional truth. What makes a human brand powerful is precisely what makes it imperfect: the capacity to feel, doubt, and change.</p>
+
+<h2>Evergreen Practices for Resonance</h2>
+<p>Technologies evolve, but the principles of meaningful communication remain stable. A few habits have proven reliable across time and medium.</p>
+<ol class="nl">
+  <li><b>Tell Stories from Real Moments</b>Stories remain the most effective way to convey experience because they organize information around cause, effect, and emotion. They allow others to see how you think. The most persuasive stories are not those of success, but of learning, moments when experience reshaped perspective. Sharing these moments creates context for your expertise and humanizes your insight.</li>
+  <li><b>Share What You Are Learning, Not Just What You Know</b>Expertise without humility creates distance. When you present yourself as a finished product, you close the door to empathy. People relate to learners more than to authorities. Communicating what you are currently exploring, what you are testing, or reconsidering, invites others into the process. It makes your work a dialogue rather than a declaration.</li>
+  <li><b>Use Your Voice and Visuals Consistently</b>Consistency builds recognition, and recognition builds trust. Whether through tone, phrasing, or visual design, coherence signals reliability. Over time, a consistent voice becomes a kind of intellectual fingerprint. Readers begin to recognize your perspective even before they see your name attached to it.</li>
+  <li><b>Connect Emotion to Every Message</b>Every meaningful communication carries an emotional component. Before sharing anything, ask what response you want to evoke: reflection, calm, curiosity, or motivation. Emotion is what turns information into memory. Facts are absorbed; feelings are remembered.</li>
+  <li><b>Stay Visible, Even When It’s Quiet</b>Attention is cyclical. Interest rises and falls. The people who endure are those who continue to show up even when visibility is low. Steady presence signals reliability. It tells your audience that you are not performing for attention but contributing out of conviction. Over time, that steadiness becomes its own form of trust.</li>
+</ol>
+<p>These practices are not marketing strategies; they are human disciplines. They require patience, integrity, and the willingness to contribute meaningfully even when there is no immediate return. The result is durability, an identity that withstands both technological shifts and temporary trends.</p>
+<p>What distinguishes enduring voices from fleeting ones is continuity. Many people can generate attention once; few can sustain credibility over time. Sustained trust emerges from alignment between what you say, how you act, and why you persist.</p>
+<p>The individuals who will matter most in the future are those who balance pace with depth, those who resist the pressure to speak constantly and instead focus on speaking meaningfully.</p>
+<p>In an environment shaped by algorithms, there is a risk of being defined by the system’s logic rather than your own. The way to resist that is to define yourself clearly and early. A personal brand built on self-knowledge, your principles, your priorities, and your limits creates a stable foundation that external forces cannot easily distort.</p>
+<p>To build a brand that outlasts AI is to build a reputation for being reliably human, thoughtful, consistent, and authentic. It requires effort, patience, and restraint. But the reward is durability: an identity that remains visible, relevant, and trusted no matter how much the environment changes.</p>
+<p class="pull">So before the world defines you with its algorithms, take the time to define yourself. Because when everyone is posting, the few who are noticed will be those who are known. <span class="hl">Build who you are before others define you; that’s how you move from noise to noted.</span></p>
+`
+},
+{
+  id:"blog-2", number:"02",
+  topic:"AI · Startups · Thinking",
+  title:"What will you do when AI stops working?",
+  desc:"Speed used to signal understanding. AI broke that link. The real test of a builder is what they do when the system fails.",
+  html:`
+<p>People often repeat a simple rule about success: the person who executes the fastest wins.</p>
+<p>You hear it everywhere in startup circles. Move quickly. Ship early. Iterate faster than everyone else. The logic feels obvious. If two people have the same idea, the one who builds it first captures the opportunity.</p>
+<p>For a long time, that rule made sense.</p>
+<p>Execution used to be expensive. If you built a product, it meant you understood how it worked. If you launched a website, you probably knew something about servers, code, or design. Building something required friction, and friction acted as a filter. It slowed people down, but it also forced them to understand the systems they were creating.</p>
+<p class="pull">Speed and understanding were linked. <span class="hl">AI has begun to separate those two things.</span></p>
+<p>Today it is possible to assemble a functioning system without understanding it. Someone can prompt an AI to generate code for a website, connect APIs through automated tools, deploy the result, and have something that looks like a legitimate product. The system works. Users arrive. The metrics move.</p>
+<p>From the outside, it looks like an impressive execution. And often it is.</p>
+<p>But something fundamental has changed in the background. The builder may not actually understand the system they assembled.</p>
+
+<h2>The day something broke</h2>
+<p>I saw this dynamic unfold recently while talking to someone who had built a small online business using AI tools. It started as an experiment. He used AI to generate the code for a website, stitched together different services for payments and analytics, and launched quickly. The site worked beautifully. Traffic began to grow. The business started generating real money. Everything seemed to confirm the narrative that speed wins.</p>
+<p>Then one day something broke.</p>
+<p>Not a simple issue like a typo or a missing plugin. Something deeper in the architecture failed. A dependency between services stopped working, the backend logic collapsed, and the website went down in a way that the original AI-generated instructions could not easily repair.</p>
+<p>At that moment the situation changed completely.</p>
+<p>Up until then, the builder had been operating as someone who could execute quickly. But the moment the system failed, speed stopped mattering. What mattered was whether he understood the structure of the system well enough to diagnose the problem.</p>
+<p>And he didn’t.</p>
+<p>The code was not something he had written from first principles. It was something he had assembled through prompts. The integrations were functional, but he did not fully understand how the components interacted. When the failure occurred, he was not troubleshooting a machine he had built. He was standing in front of one he had assembled without fully understanding.</p>
+<p>This situation is going to become more common.</p>
+
+<h2>AI lowers the cost of execution, not understanding</h2>
+<p>AI dramatically lowers the cost of execution. It allows people to build things faster than ever before. But it does not lower the cost of understanding how those things actually work.</p>
+<p>For a while, the difference remains invisible. As long as systems operate smoothly, assembly looks indistinguishable from mastery. A functioning website does not reveal whether its creator understands the architecture behind it.</p>
+<p class="keyq">Failure reveals that difference.</p>
+<p>Before AI tools became widely available, building something complex usually meant passing through a process of gradual understanding. When you struggled with code, you learned something about how the system behaved. When you debugged a problem, you discovered relationships between different components. The friction of building was educational.</p>
+<p>AI compresses that learning curve.</p>
+<p>You can reach the outcome without passing through the understanding that traditionally accompanied it. The tool produces working structures quickly enough that the builder can skip stages that once forced deeper comprehension.</p>
+<p>This does not make AI bad. In many ways it is extraordinary. It allows experimentation at a scale that was previously impossible. People can test ideas rapidly, prototype systems, and explore possibilities without months of preparation.</p>
+<p>But it does change the nature of competence.</p>
+<p><b>When execution becomes easy, execution stops being a reliable signal of understanding.</b></p>
+<p>The startup world has not fully adjusted to this yet. Much of its language still assumes that speed is rare and therefore valuable. But when powerful tools allow many people to move quickly, speed stops being a differentiator.</p>
+<p>Understanding becomes a scarce resource again.</p>
+
+<h2>Following a recipe vs. knowing how to cook</h2>
+<p>This shift has interesting consequences. Someone can appear highly capable in a system where tools are functioning smoothly. The moment the environment changes or the system breaks, the difference between someone who understands the underlying structure and someone who merely assembled it becomes obvious.</p>
+<p>It is similar to the difference between following a recipe and knowing how to cook.</p>
+<p>If the ingredients are available and the steps work exactly as written, following instructions can produce a good meal. But if the ingredients change, if the heat behaves differently, if the process breaks down, the person who understands cooking can adapt while the person who only followed instructions is stuck.</p>
+<p>AI is giving many people recipes for building complex systems.</p>
+<p>The question is whether they are also learning how those systems actually function.</p>
+<p>The belief that the fastest executor always wins comes from a time when execution required knowledge. Today execution can be partially automated. That changes what success actually depends on.</p>
+<p>Speed still matters. Launching early and experimenting quickly remains valuable. But speed alone is no longer proof of competence. It can simply mean someone had access to powerful tools.</p>
+
+<h2>Who can still think when the tools fail?</h2>
+<p>What will matter more over time is who can still think when the tools fail.</p>
+<p>Because tools will fail. Systems will break. Unexpected situations will appear. When that happens, the advantage shifts to the person who understands the structure behind the surface.</p>
+<p>In that sense, AI does not eliminate the importance of deep knowledge. It makes the difference between shallow assembly and real understanding more visible.</p>
+<p>The paradox is that the people who rely entirely on speed may look successful at first. They can produce results quickly. They can build impressive things in short periods of time. For a while, that speed looks like mastery.</p>
+<p>But when something unpredictable happens, the limits of that approach become clear.</p>
+<p>The real question for the coming generation of builders is not whether they can execute quickly. AI has made that increasingly accessible.</p>
+<p>The real question is whether they are still developing the kind of understanding that allows them to navigate systems when the scripts stop working.</p>
+<p class="pull">Because the future will belong less to the person who builds first and more to the person who <span class="hl">knows what to do when the system stops behaving the way the instructions said it would.</span></p>
+`
+},
+
+{
+  id:"blog-3", number:"03",
+  topic:"Startups · Networking · UK",
+  title:"25 Startup Networking Events Every UK Founder Should Know About",
+  desc:"A founder-first guide to 25 real UK events and programmes, and how to choose the rooms that are actually worth your time.",
+  html:`
+<div class="callout"><div class="ct">5 Takeaways</div>
+<ul class="bl">
+  <li>Pick events around the problem you need to solve.</li>
+  <li>Investor, customer and peer events serve different purposes.</li>
+  <li>Regional founder ecosystems deserve serious attention.</li>
+  <li>Smaller recurring events can create stronger relationships than large conferences.</li>
+  <li>Follow-up determines whether networking becomes commercially useful.</li>
+</ul></div>
+<div class="callout sand"><div class="ct">Summary</div>
+<p>UK founders can choose from major conferences, investor summits, regional technology festivals, pitch nights and recurring founder events. The right choice depends on whether you need customers, investors, partners, expertise or peer perspective.</p></div>
+<p><b>There is no single best event.</b></p>
+<p>If you are validating an idea, finding first customers, preparing to raise or looking for partners, you need different people around you.</p>
+<p>More contacts do not automatically mean better connections. Here are 25 real events and recurring programmes worth knowing about.</p>
+
+<h2>The 25 events</h2>
+<div class="event-grid">
+  <div class="event"><span class="en">01</span><h4>London Tech Week</h4><span class="et">useful for the wider tech ecosystem</span><p>London Tech Week connects entrepreneurs, investors, technology leaders and innovators. Its latest edition has finished, with registrations of interest now open for the next event.</p></div>
+  <div class="event"><span class="en">02</span><h4>Sifted Summit</h4><span class="et">particularly relevant for scaleups</span><p>Sifted Summit brings founders, operators and investors together, with its current startup and scaleup proposition particularly focused on Series A+ businesses.</p></div>
+  <div class="event"><span class="en">03</span><h4>The Business Show London</h4><span class="et">useful for broader SME connections</span><p>The Business Show London combines exhibitors, speakers and business-support providers. It suits founders looking beyond the startup-only circuit.</p></div>
+  <div class="event"><span class="en">04</span><h4>Festival of Entrepreneurs</h4><span class="et">useful for commercial growth conversations</span><p>Festival of Entrepreneurs covers customers, funding, teams, technology, new markets and business value for founders and business owners.</p></div>
+  <div class="event"><span class="en">05</span><h4>Founders Forum Global</h4><span class="et">relevant but highly selective</span><p>Founders Forum Global brings together scaled founders, investors and business leaders. Its flagship forums are invitation-only, so access is deliberately curated.</p></div>
+  <div class="event"><span class="en">06</span><h4>Turing Fest</h4><span class="et">particularly relevant for fundraising founders</span><p>Turing Fest connects early-stage founders and investors in Edinburgh, including stage-and-sector-matched founder-investor meetings.</p></div>
+  <div class="event"><span class="en">07</span><h4>UKBAA Early-Stage Investment Summit</h4><span class="et">useful for understanding capital</span><p>The Early-Stage Investment Summit brings entrepreneurs, investors and ecosystem participants together around UK early-stage investment.</p></div>
+  <div class="event"><span class="en">08</span><h4>Rare Founders Open Mic</h4><span class="et">useful for pitch practice</span><p>Rare Founders runs monthly Open Mic Pitch Nights where early-stage founders can pitch, hear other propositions and meet investors.</p></div>
+  <div class="event"><span class="en">09</span><h4>Rare Founders Demo Day</h4><span class="et">useful for concentrated investor exposure</span><p>Rare Founders Demo Day gives selected startups the opportunity to pitch within a larger founder and investor event.</p></div>
+  <div class="event"><span class="en">10</span><h4>The Pitch</h4><span class="et">useful for sharpening investment readiness</span><p>The Pitch connects founders with investors and mentors across the UK and Ireland. Its latest competition has finished, with the next programme due to reopen.</p></div>
+  <div class="event"><span class="en">11</span><h4>Startup Valley London</h4><span class="et">useful for regular pitching</span><p>Startup Valley London runs pitch nights, panels and structured networking between founders, investors and operators.</p></div>
+  <div class="event"><span class="en">12</span><h4>Entrepreneurs Collective</h4><span class="et">useful for varied founder events</span><p>Entrepreneurs Collective runs pitch competitions, speed pitching, fireside chats and investor lunches throughout the year.</p></div>
+  <div class="event"><span class="en">13</span><h4>Virgin StartUp events</h4><span class="et">useful for practical founder learning</span><p>Virgin StartUp lists founder meet-ups, expert talks and startup networking opportunities across the UK.</p></div>
+  <div class="event"><span class="en">14</span><h4>Startup Grind London</h4><span class="et">useful for recurring connections</span><p>Startup Grind London hosts regular events connecting entrepreneurs with founders, innovators and investors.</p></div>
+  <div class="event"><span class="en">15</span><h4>Founders Running Club</h4><span class="et">useful for informal networking</span><p>Founders Running Club combines weekly running with networking between founders, investors, operators and other startup-community members.</p></div>
+  <div class="event"><span class="en">16</span><h4>Ideas Fest</h4><span class="et">useful for a broader entrepreneurial audience</span><p>Ideas Fest brings entrepreneurs and business leaders together for two days of learning, discussion and connections.</p></div>
+  <div class="event"><span class="en">17</span><h4>Founderfest</h4><span class="et">useful for inclusive founder connections</span><p>Founderfest focuses on inclusive entrepreneurship, business growth, practical workshops and opportunities to connect with other founders.</p></div>
+  <div class="event"><span class="en">18</span><h4>Birmingham Tech Week</h4><span class="et">useful for West Midlands connections</span><p>Birmingham Tech Week brings founders, investors, technology businesses and adopters together across a multi-event regional programme.</p></div>
+  <div class="event"><span class="en">19</span><h4>Cambridge Tech Week</h4><span class="et">particularly relevant for deep-tech founders</span><p>Cambridge Tech Week connects founders, investors, researchers and technology leaders across AI, health and science-led innovation.</p></div>
+  <div class="event"><span class="en">20</span><h4>Leeds Digital Festival</h4><span class="et">useful for exploring a regional ecosystem</span><p>Leeds Digital Festival is a community-led programme covering startups, AI, fintech, healthtech, software and other digital sectors.</p></div>
+  <div class="event"><span class="en">21</span><h4>Brazen</h4><span class="et">useful for South West founders</span><p>Brazen evolved from Bristol’s technology festival and now connects technology, creativity and culture through a city-wide programme.</p></div>
+  <div class="event"><span class="en">22</span><h4>TechNExt</h4><span class="et">useful for North East technology connections</span><p>TechNExt brings businesses, entrepreneurs and technology communities together across the North East. Its latest festival has finished, with the next edition being prepared.</p></div>
+  <div class="event"><span class="en">23</span><h4>Belfast Tech Week</h4><span class="et">useful for Northern Ireland connections</span><p>Belfast Tech Week operates as a community-led programme of panels, workshops, product activity and networking across Belfast’s technology ecosystem.</p></div>
+  <div class="event"><span class="en">24</span><h4>UK Black Business Week &amp; Show</h4><span class="et">particularly relevant to Black entrepreneurs and allies</span><p>UK Black Business Week combines business insight, practical learning and networking across multiple sectors.</p></div>
+  <div class="event"><span class="en">25</span><h4>Female Founders Rise Summit Series</h4><span class="et">particularly relevant to women and non-binary founders</span><p>Female Founders Rise runs networking, workshops and Summit Series events connecting women and non-binary founders with investors and experts.</p></div>
+</div>
+
+<h2>How do I decide which events deserve my time?</h2>
+<p>Before booking, ask:</p>
+<ul class="bl">
+  <li>Who do we actually need to meet?</li>
+  <li>What business problem are we solving?</li>
+  <li>Do we need customers, investors, partners or peers?</li>
+  <li>What would make the time and cost worthwhile?</li>
+  <li>What useful next step could follow?</li>
+</ul>
+<p>You can also find current opportunities through the British Business Bank events programme and free, expert-led Business.gov.uk Business Academy events.</p>
+
+<h2>What networking mistakes should founders avoid?</h2>
+<p>Do not attend everything, pitch everyone or measure success by LinkedIn connections.</p>
+<p>If you need customers, speak to customers. If you are fundraising, understand investor fit. If you need perspective on pricing, hiring or growth, another founder may be more valuable.</p>
+
+<h2>How does SU2SU help founders think through networking?</h2>
+<p class="keyq">Networking creates inputs. Founders still have to decide what to do with them.</p>
+<p>Our weekly Founder Surgery gives founders an informal space to share current challenges, seek advice and hear different perspectives from peers.</p>
+<p>Our Guest Speaker Sessions and Knowledge Bank add further context through expert-led discussions, recorded sessions, templates and guides. Founders can also explore Real Startup Questions. Real Founder Answers. or watch founder questions and expert conversations on our YouTube channel.</p>
+
+<h2>Conclusion</h2>
+<p>The right event is not necessarily the biggest one. It is the room most relevant to the decision sitting in front of you.</p>
+<p class="pull">Choose deliberately. <span class="hl">Have fewer, better conversations.</span> Follow up properly.</p>
+<p>If this is a question you are dealing with now, bring it into a SU2SU Founder Surgery or explore Startup 2 Standup membership to get practical support from founders, experts and peers who understand the journey.</p>
+
+<h2>FAQs</h2>
+<div class="faq">
+  <div class="faq-item"><h4>Should I attend networking events before launching?</h4><p>Yes. The right room can help with validation, customer conversations and understanding the market before you invest heavily.</p></div>
+  <div class="faq-item"><h4>Are investor events useful if I am not raising yet?</h4><p>They can help you understand investor expectations, but customers and traction should not become secondary simply because investors are present.</p></div>
+  <div class="faq-item"><h4>Are regional startup events worth attending?</h4><p>Yes. They can provide concentrated access to local customers, talent, investors and collaborators.</p></div>
+  <div class="faq-item"><h4>Is a paid event automatically better?</h4><p>No. Judge the audience, format and relevance rather than the ticket price.</p></div>
+  <div class="faq-item"><h4>What should I do after meeting someone useful?</h4><p>Follow up with context and a specific next step. A vague “great to meet you” rarely moves a business conversation forward.</p></div>
+</div>
+`
+},
+{
+  id:"blog-4", number:"04",
+  topic:"SME · Business Planning · UK",
+  title:"What Does a Realistic 90-Day Business Plan Include for an SME?",
+  desc:"A practical 90-day planning framework covering cashflow, sales, margins, people and operations, with the 2026/27 UK payroll, wage and VAT numbers to plan around.",
+  html:`
+<div class="callout"><div class="ct">5 Takeaways</div>
+<ul class="bl">
+  <li>A useful 90-day plan should focus on a small number of priorities that can genuinely improve the business.</li>
+  <li>Cashflow, sales, margins, people and operations need to be planned together, not in isolation.</li>
+  <li>Every priority needs a measurable outcome, clear ownership and a deadline.</li>
+  <li>Weekly checks and deeper monthly reviews help us identify problems before the quarter is lost.</li>
+  <li>The end-of-quarter review should shape the next 90 days rather than simply repeat unfinished actions.</li>
+</ul></div>
+<div class="callout sand"><div class="ct">Summary</div>
+<p>A realistic 90-day business plan gives an SME a small number of priorities across cashflow, sales, margins, people and operations. It turns longer-term goals into measurable actions, assigns ownership and creates regular review points, helping us spot pressure early, make better decisions and keep the business moving with control today.</p></div>
+
+<h2>Introduction</h2>
+<p>Long business plans can look impressive and still change very little. For an SME, we usually need something simpler: a clear view of what matters now, what must happen next and who owns each action. A 90-day plan gives us that structure without pretending the year will unfold as expected.</p>
+
+<h2>What Does a Realistic 90-Day Business Plan Actually Include?</h2>
+<p>A realistic 90-day plan turns our wider business goals into a small number of actions we can complete, measure and review within one quarter.</p>
+<p>It should tell us where we are trying to get to, what needs to happen, what it will cost and who is responsible.</p>
+<p>For most SMEs, that means covering:</p>
+<ul class="bl">
+  <li>A small number of main business priorities</li>
+  <li>Cashflow and financial targets</li>
+  <li>Sales and customer activity</li>
+  <li>Margin and profitability</li>
+  <li>People and capacity</li>
+  <li>Operational improvements</li>
+  <li>Clear owners for every major action</li>
+  <li>Weekly or monthly measures</li>
+  <li>A formal review at the end of the 90 days</li>
+</ul>
+<p>The important point is that these areas cannot sit in separate boxes. If we plan to increase sales by 20%, for example, we also need to ask whether the team can deliver the additional work, whether extra stock or labour needs funding and whether the work generates enough margin.</p>
+<p>That joined-up thinking is what turns a list of targets into a business plan.</p>
+<p>Our guide to how a business blueprint helps SME owners move from reaction to control explores the same principle at a wider level: goals, numbers, people and actions need to connect.</p>
+
+<h3>How many priorities should we put into the plan?</h3>
+<p>A practical 90-day plan will often work best with a small number of genuinely important priorities, for many SMEs, around three to five, rather than trying to move every objective forward at once.</p>
+<p class="keyq">If everything becomes a priority, nothing really is.</p>
+<p>We may want to improve sales, recruit, reduce costs, launch a service, change software, improve marketing and redesign processes. Trying to push every one of those forward at once often spreads management attention too thinly.</p>
+<p>We should ask: <b>Which few changes would make the biggest difference over the next 90 days?</b></p>
+
+<h2>Why Are 90-Day Plans More Useful Than Long Plans Nobody Follows?</h2>
+<p>Annual planning still matters. We need to know where we want the business to go.</p>
+<p>The problem comes when a detailed 12-month document becomes too rigid to reflect what is actually happening.</p>
+<p>SMEs operate in a moving environment. Customer demand changes. A large invoice arrives late. A key employee leaves. Supplier prices move. A recruitment decision takes longer than planned.</p>
+<p>A 90-day cycle gives us enough time to make meaningful progress while keeping the planning horizon close enough to reality.</p>
+<p>It does not replace our longer-term strategy. It translates it into the next practical set of decisions.</p>
+<p>CH4B’s 9-Step Growth System takes the same connected approach by bringing finances, operations, people and planning into one growth structure.</p>
+
+<h3>Why does shorter planning improve accountability?</h3>
+<p>A target that needs action this week is harder to ignore than an annual objective sitting nine months away. We can assign ownership, check progress and deal with problems while there is still time to change the outcome.</p>
+<p>That creates a much healthier rhythm:</p>
+<ol class="nl plain">
+  <li>Decide what matters.</li>
+  <li>Agree who owns it.</li>
+  <li>Measure progress.</li>
+  <li>Deal with what is off track.</li>
+  <li>Adjust where the evidence changes.</li>
+</ol>
+
+<h2>What Should We Include Across Cash, Sales, People and Operations?</h2>
+<p>A strong 90-day plan should reflect how the whole business works. Sales affect cash. People affect payroll. Pricing affects margins. Operational problems affect customer experience and profitability.</p>
+<p>Looking at any one of these without the others can create decisions that appear sensible but add pressure somewhere else.</p>
+
+<h3>What should we include for cashflow?</h3>
+<p>Start with the money we expect to have available, not just the profit we hope to make.</p>
+<p>Review:</p>
+<ul class="bl">
+  <li>Current cash position</li>
+  <li>Expected customer receipts</li>
+  <li>Overdue invoices</li>
+  <li>Payroll dates</li>
+  <li>VAT and tax payments</li>
+  <li>Supplier commitments</li>
+  <li>Loan or finance repayments</li>
+  <li>Planned investment</li>
+  <li>A minimum cash level we do not want to fall below</li>
+</ul>
+<p>This gives us an early warning system.</p>
+<p>A profitable quarter can still create cash pressure if customers pay after wages and suppliers need paying. That matters particularly when growth requires us to fund delivery before collecting the revenue.</p>
+
+<h3>What should we include for sales?</h3>
+<p>A revenue target is useful, but it is not enough. We need to understand what activity will create it.</p>
+<p>That could include:</p>
+<ul class="bl">
+  <li>Qualified opportunities required</li>
+  <li>Pipeline value</li>
+  <li>Conversion rates</li>
+  <li>Average order value</li>
+  <li>Existing customer opportunities</li>
+  <li>Number of proposals needed</li>
+  <li>Expected timing of new revenue</li>
+</ul>
+<p>This makes the target practical. Instead of saying, “We need another £100,000 of sales”, we can see what needs to happen each week to create that result.</p>
+
+<h3>What should we include for margins?</h3>
+<p>We should look at the quality of revenue as well as the quantity.</p>
+<p>More turnover does not automatically make us stronger. If additional work comes with heavy discounts, excessive labour or rising supplier costs, we can become busier while making less money.</p>
+<p>Our article on the consequences of turnover obsession for UK SMEs explains why sales growth needs to be tested against profit, cashflow and operational pressure.</p>
+<p>For the next 90 days, we may need to review:</p>
+<ul class="bl">
+  <li>Gross margin by service or product</li>
+  <li>Discounting</li>
+  <li>Delivery costs</li>
+  <li>Supplier increases</li>
+  <li>Unprofitable customers</li>
+  <li>Pricing that has not kept pace with costs</li>
+</ul>
+<p class="keyq">Here’s what matters now. A sales target should never sit in the plan without a margin target beside it.</p>
+
+<h2>How Should Payroll and Employment Costs Affect the Plan?</h2>
+<p>People decisions can quickly become some of the largest financial commitments an SME makes. We therefore need to look beyond salary when planning recruitment.</p>
+<p>For the 2026/27 tax year, the standard employer Class 1 National Insurance rate is 15% for most employees on earnings above the Secondary Threshold. The standard Secondary Threshold is £96 a week, £417 a month or £5,000 a year, although different employer thresholds and reliefs can apply to certain employee categories. The current GOV.UK employer rates and thresholds set out the position.</p>
+<p>Eligible employers may also be able to reduce their employer Class 1 National Insurance liability through Employment Allowance. For 2026/27, the maximum allowance is £10,500.</p>
+<p>We also need to check statutory wage floors when we budget for recruitment. From 1 April 2026, the National Living Wage for workers aged 21 and over is £12.71 an hour. The National Minimum Wage is £10.85 for workers aged 18 to 20, and £8.00 for workers under 18 and qualifying apprentices. Apprentices aged 19 or over who have completed the first year of their apprenticeship are normally entitled to the minimum wage for their age.</p>
+<p>That means a recruitment decision should consider the full employment cost, including:</p>
+<ul class="bl">
+  <li>Salary</li>
+  <li>Employer National Insurance where due</li>
+  <li>Employer pension contributions</li>
+  <li>Equipment and software</li>
+  <li>Training</li>
+  <li>Recruitment costs</li>
+  <li>Management time</li>
+  <li>Whether the role will genuinely improve capacity or performance</li>
+</ul>
+<p>We should also ask whether recruitment is actually the answer. Sometimes the underlying problem is unclear roles, poor processes or work that should no longer be done.</p>
+<p>That is why our guide to the processes SMEs need before scaling is relevant here. Better structure can sometimes unlock capacity before another salary is added to payroll.</p>
+
+<h2>How Should VAT and Tax Fit Into a 90-Day Cash Plan?</h2>
+<p>VAT can create a false sense of available cash if we only look at the bank balance.</p>
+<p>For VAT-registered businesses, VAT charged to customers is not simply additional operating income. The VAT ultimately payable to HMRC will normally reflect VAT due on sales after allowable VAT on eligible business purchases and any other relevant VAT adjustments are taken into account.</p>
+<p>We need to plan for that liability rather than treating every pound in the account as working capital.</p>
+<p>As of August 2026, a UK business generally needs to register for VAT if its total VAT-taxable turnover for the previous 12 months goes over £90,000, subject to the specific registration, exemption and exception rules that may apply.</p>
+<p>We must also register if we realise that our total VAT-taxable turnover will go over £90,000 in the next 30 days alone. In that situation, we must register by the end of that 30-day period, and our effective registration date is the date we realised the threshold would be exceeded.</p>
+<p>HMRC explains the rules in its VAT registration guidance.</p>
+<p>For a growing SME, that threshold can become a genuine 90-day planning issue.</p>
+<p>A strong sales quarter can bring us closer to compulsory VAT registration, which may affect pricing, invoicing, administration, cashflow planning and margins depending on our customers, pricing model and ability to recover VAT on eligible costs.</p>
+<p><b>We should spot that before the threshold is crossed, not afterwards.</b></p>
+
+<h2>What Should a Simple 90-Day Scorecard Look Like?</h2>
+<p>The scorecard should be short enough that we actually use it.</p>
+<div class="tbl-wrap"><table>
+  <thead><tr><th>Area</th><th>90-day objective</th><th>Measure</th><th>Warning sign</th></tr></thead>
+  <tbody>
+    <tr><td>Cashflow</td><td>Maintain adequate headroom</td><td>Weekly cash forecast</td><td>Cash falling below agreed minimum</td></tr>
+    <tr><td>Sales</td><td>Build required pipeline</td><td>Qualified pipeline value</td><td>Opportunities not progressing</td></tr>
+    <tr><td>Margin</td><td>Protect profitability</td><td>Gross margin percentage</td><td>Revenue rising while margin falls</td></tr>
+    <tr><td>People</td><td>Create delivery capacity</td><td>Workload and output</td><td>Overtime or delays increasing</td></tr>
+    <tr><td>Operations</td><td>Remove one major bottleneck</td><td>Time, errors or rework</td><td>Problem continues after changes</td></tr>
+  </tbody>
+</table></div>
+<p>The exact measures will vary by business. What matters is that every measure should lead to a decision.</p>
+<p>If a number changes and we would do nothing differently, it probably does not need to dominate our quarterly scorecard.</p>
+
+<h2>How Do We Turn the Plan Into Weekly Action?</h2>
+<p>A 90-day plan only works if it stays visible. We should break the quarter into three stages.</p>
+<h3>What should happen in days 1 to 30?</h3>
+<p>Establish the starting point and complete the actions that everything else depends on.</p>
+<p>That might mean fixing cashflow forecasting, reviewing the pipeline, clarifying roles or correcting a pricing problem.</p>
+<h3>What should happen in days 31 to 60?</h3>
+<p>This is where we test whether the plan is working.</p>
+<ul class="bl">
+  <li>Are sales moving?</li>
+  <li>Are margins holding?</li>
+  <li>Has workload improved?</li>
+  <li>Are customers paying when expected?</li>
+</ul>
+<p>If the evidence says an assumption was wrong, we should adjust.</p>
+<h3>What should happen in days 61 to 90?</h3>
+<p>Finish the priority actions and measure what actually changed.</p>
+<p>We should also start identifying what the next quarter needs from us.</p>
+<p>A simple weekly review can ask:</p>
+<ol class="nl plain">
+  <li>What should have happened?</li>
+  <li>What actually happened?</li>
+  <li>What is off track?</li>
+  <li>Why?</li>
+  <li>What decision is needed?</li>
+  <li>Who owns the next action?</li>
+</ol>
+<p>For SMEs wanting more regular structure around these decisions, our CH4B Core Membership includes access to ongoing business support, a dedicated Business Advisor, the CH4B Business Helpline, learning resources and quarterly group workshops.</p>
+
+<h2>How Should We Review the Business at the End of 90 Days?</h2>
+<p>The review is not about proving that every target was achieved. It is about learning enough to make the next plan better.</p>
+<p>We should ask:</p>
+<ul class="bl">
+  <li>Which outcomes did we achieve?</li>
+  <li>Which targets were missed?</li>
+  <li>Why were they missed?</li>
+  <li>What happened to cashflow?</li>
+  <li>Did margins improve or weaken?</li>
+  <li>Did payroll create the return we expected?</li>
+  <li>Which customers or services performed best?</li>
+  <li>What operational problems remain?</li>
+  <li>What have we learned about team capacity?</li>
+  <li>Which priorities should continue?</li>
+</ul>
+<p>There is one more important question:</p>
+<p class="pull">What should we <span class="hl">stop?</span></p>
+<p>Unfinished work should not automatically roll into the next 90-day plan.</p>
+<p>Sometimes it was the wrong priority. Sometimes circumstances changed. Sometimes we simply learned that the expected return was not there.</p>
+<p>Removing those actions creates room for what matters next.</p>
+
+<h2>Conclusion</h2>
+<p>A realistic 90-day business plan starts with where the business is now, not where we hope it might be.</p>
+<p>We need a clear view of cashflow, sales, margins, payroll, people capacity and operational pressure. From there, we can choose a small number of priorities that will genuinely strengthen the business.</p>
+<p>Keep the structure simple. Set measurable outcomes. Give every major action an owner. Review progress every week. Look deeper each month. Then use what we learn to shape the next quarter.</p>
+<p class="keyq">Planning should give us more control, not more paperwork.</p>
+<p>Book a review with us to get clarity on your next steps.</p>
+
+<h2>What Else Do SME Owners Ask About 90-Day Planning?</h2>
+<div class="faq">
+  <div class="faq-item"><h4>Should we create a 90-day plan if our business is very small?</h4><p>Yes. Smaller teams often have fewer resources and less room for wasted effort, so clear priorities can be particularly valuable. The plan does not need to be complicated. It needs to show what matters, who owns it and how we will measure progress.</p></div>
+  <div class="faq-item"><h4>Should every employee see the full 90-day plan?</h4><p>Not necessarily every financial detail, but people should understand the priorities that affect their role. If the team does not know what matters this quarter, they cannot consistently make decisions that support the plan.</p></div>
+  <div class="faq-item"><h4>What happens if a major customer leaves halfway through the quarter?</h4><p>We should reassess the plan immediately. A significant revenue loss could change cashflow, recruitment, spending and sales priorities. Sticking rigidly to the original plan when the underlying facts have changed is not discipline.</p></div>
+  <div class="faq-item"><h4>Do we need specialist software for a 90-day business plan?</h4><p>No. A spreadsheet, shared document or existing management system can be enough. The value comes from clear priorities, reliable numbers, ownership and regular review. Complicated software will not rescue a plan that nobody uses.</p></div>
+  <div class="faq-item"><h4>How do we know whether our next 90-day plan is too ambitious?</h4><p>Check it against cash, time and capacity. If achieving every priority requires people to work permanently beyond available capacity, assumes every sales opportunity will convert or leaves no financial headroom when something slips, the plan needs tightening.</p></div>
+</div>
+`
+}
+];
+
+/* ============================================================
+   BLOGS TAB (added) — render + routing
+   ============================================================ */
+function blogReadTime(html){
+  const words = html.replace(/<[^>]+>/g," ").split(/\s+/).filter(Boolean).length;
+  return Math.max(1, Math.round(words/220)) + " min read";
+}
+
+const BLOG_CTA = `
+  <div class="final-cta cs-end-cta">
+    <h2>Want writing that sounds like you and earns trust?</h2>
+    <p class="lead2">Long-form or LinkedIn, the goal is the same: ideas worth stopping for, in a voice people recognise. Let's talk about yours.</p>
+    <div class="btn-row">
+      <a class="btn dark" href="https://topmate.io/khushi_lulla/" target="_blank" rel="noopener">Book a call</a>
+      <a class="btn" href="https://wa.me/918320967530" target="_blank" rel="noopener">WhatsApp me</a>
+      <a class="btn" href="https://www.linkedin.com/in/khushilulla/" target="_blank" rel="noopener">See my LinkedIn</a>
+    </div>
+  </div>
+  <footer><p>KHUSHI LULLA · CONTENT STRATEGY &amp; GHOSTWRITING · MADE FOR PEOPLE WHO HAVE SOMETHING TO SAY</p></footer>`;
+
+function renderBlogsIndex(){
+  const cards = BLOGS.map(b=>`
+    <div class="blog-card" onclick="showView('${b.id}')">
+      <div class="bc-top">
+        <span class="bc-num mono">Blog ${b.number}</span>
+        <h3>${b.title}</h3>
+      </div>
+      <div class="bc-body">
+        <p class="bc-desc">${b.desc}</p>
+        <div class="bc-meta"><span class="bc-chip">${b.topic}</span><span class="bc-chip">${blogReadTime(b.html)}</span></div>
+        <div class="bc-cta">Read the blog <span class="arrow">→</span></div>
+      </div>
+    </div>`).join("");
+  return `
+  <div class="wrap"><div style="padding-top:22px;"><a class="back-btn" onclick="showView('home')">← Back to home</a></div></div>
+  <section class="hero" style="padding-top:44px;">
+    <div class="dotfield"></div>
+    <svg class="doodle hero-doodle-star" viewBox="0 0 100 100" fill="none"><path d="M50 2 L58 40 L98 50 L58 60 L50 98 L42 60 L2 50 L42 40 Z" fill="#2a80ff"/></svg>
+    <div class="doodle hero-doodle-circle"></div>
+    <div class="wrap">
+      <div class="eyebrow"><span class="dot"></span>long-form writing</div>
+      <h1>Beyond the feed: <span class="accent">4 blogs</span> on AI, trust, startups and SMEs.</h1>
+      <p class="hero-sub">LinkedIn posts are short by design. These are what happens when an idea gets room to breathe: a point of view on AI and personal branding, plus two practical, search-friendly guides for founders and business owners.</p>
+    </div>
+  </section>
+  <div class="checker-strip blue"></div>
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow"><span class="dot"></span>the blogs</div>
+        <h2>Opinion pieces and practical guides, in full.</h2>
+        <p class="lead">Click into any card to read the complete blog.</p>
+      </div>
+      <div class="blog-grid">${cards}</div>
+    </div>
+  </section>
+  ${BLOG_CTA}`;
+}
+
+function renderBlog(b, i){
+  const prev = BLOGS[i-1], next = BLOGS[i+1];
+  const pager = `
+    <div class="blog-pager">
+      ${prev ? `<div class="pager-card" onclick="showView('${prev.id}')"><div class="pl">← Previous · Blog ${prev.number}</div><div class="pt">${prev.title}</div></div>` : `<span></span>`}
+      ${next ? `<div class="pager-card next" onclick="showView('${next.id}')"><div class="pl">Next · Blog ${next.number} →</div><div class="pt">${next.title}</div></div>` : ``}
+    </div>`;
+  return `
+  <div class="wrap"><div style="padding-top:22px;"><a class="back-btn" onclick="showView('blogs')">← All blogs</a></div></div>
+  <section class="cs-hero">
+    <div class="wrap">
+      <div class="eyebrow"><span class="dot"></span>blog ${b.number}</div>
+      <h1>${b.title}</h1>
+      <div class="cs-meta-row">
+        <span class="meta-chip">Topic: <b>${b.topic}</b></span>
+        <span class="meta-chip">Length: <b>${blogReadTime(b.html)}</b></span>
+      </div>
+    </div>
+  </section>
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <article class="blog-article">${b.html}</article>
+      ${pager}
+    </div>
+  </section>
+  ${BLOG_CTA}`;
+}
+
+(function mountBlogs(){
+  const host = document.getElementById("app");
+  let html = `<div id="view-blogs" class="cs-view">${renderBlogsIndex()}</div>`;
+  BLOGS.forEach((b,i)=>{ html += `<div id="view-${b.id}" class="cs-view">${renderBlog(b,i)}</div>`; });
+  host.insertAdjacentHTML("beforeend", html);
+
+  // highlight the Blogs nav link while inside the blogs section
+  const baseShowView = showView;
+  window.showView = showView = function(id){
+    baseShowView(id);
+    const link = document.querySelector(".blogs-link");
+    if(link) link.classList.toggle("on", id==="blogs" || id.indexOf("blog-")===0);
+  };
+
+  // browser back/forward + direct links (#blogs, #blog-2 ...)
+  window.addEventListener("hashchange", ()=>{
+    const id = window.location.hash.replace("#","");
+    if(id && document.getElementById("view-"+id) && !document.getElementById("view-"+id).classList.contains("active")) showView(id);
+  });
+  const start = window.location.hash.replace("#","");
+  if(start && document.getElementById("view-"+start)) showView(start);
+})();
+
 </script>
 </body>
 </html>
